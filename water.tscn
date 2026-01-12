@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcw1480onuwmh"]
+
+[ext_resource type="Script" uid="uid://b6hhy1asq0ft0" path="res://water.gd" id="1_qi1wl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seble"]
+size = Vector2(2000, 2000)
+
+[node name="water" type="Area2D"]
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector2(1, 0)
+gravity_direction = Vector2(1, 0)
+gravity = -980.0
+script = ExtResource("1_qi1wl")
+size_x = null
+size_y = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_seble")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

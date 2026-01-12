@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://s36ch8poy7w6"]
+
+[ext_resource type="PackedScene" uid="uid://dh40ftd6ea0y1" path="res://scenes/player.tscn" id="2_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://v08i8wm232wa" path="res://assets/water-low.png" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://bcw1480onuwmh" path="res://water.tscn" id="3_4wyf3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gv5m4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3sb7"]
+size = Vector2(350, 112)
+
+[node name="world" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(136, 559)
+physics_material_override = SubResource("PhysicsMaterial_gv5m4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(41, 33)
+shape = SubResource("RectangleShape2D_f3sb7")
+
+[node name="Water-low" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(578.333, 555)
+scale = Vector2(0.722083, 0.483333)
+texture = ExtResource("2_rwgxs")
+
+[node name="player" parent="." instance=ExtResource("2_fj7yv")]
+position = Vector2(170, 451)
+
+[node name="water" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(825, 1621)
+gravity_space_override = 0
+gravity = 0.0
+size_x = 2000.0
+size_y = 2000.0
