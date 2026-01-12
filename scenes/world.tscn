@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://s36ch8poy7w6"]
+[gd_scene load_steps=6 format=3 uid="uid://s36ch8poy7w6"]
 
 [ext_resource type="PackedScene" uid="uid://dh40ftd6ea0y1" path="res://scenes/player.tscn" id="2_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://v08i8wm232wa" path="res://assets/water-low.png" id="2_rwgxs"]
@@ -8,9 +8,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3sb7"]
 size = Vector2(350, 112)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4wyf3"]
-load_path = "res://.godot/imported/dynamic_water_2d.svg-03f8034432801c62a1ef55e3ea8b752d.editor.ctex"
 
 [node name="world" type="Node2D"]
 
@@ -37,8 +34,3 @@ gravity_space_override = 0
 gravity = 0.0
 size_x = 2000.0
 size_y = 2000.0
-
-[node name="DynamicWater2d" type="Sprite2D" parent="."]
-position = Vector2(768, 733)
-scale = Vector2(39.75, 7.4375)
-texture = SubResource("CompressedTexture2D_4wyf3")
