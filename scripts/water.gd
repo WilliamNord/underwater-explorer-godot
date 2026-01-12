@@ -23,7 +23,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.in_water_gravity()
 
-
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.out_water_gravity()
