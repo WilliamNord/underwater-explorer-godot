@@ -3,6 +3,10 @@ extends CharacterBody2D
 
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
+@export var MAX_SPEED = 100
+
+var acceleration := 2.5
+var last_direction: float
 
 var is_swimming = false
 
@@ -12,8 +16,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	
 	if is_swimming:
-		velocity.y = move_toward(velocity.y, 0, 500 * delta)
-		velocity.x = move_toward(velocity.x, 0, 500 * delta)
+		velocity.y = move_toward(velocity.y, 0, 400 * delta)
+		velocity.x = move_toward(velocity.x, 0, 400 * delta)
 	else:
 		if not is_on_floor():
 			velocity += get_gravity() * delta
@@ -25,6 +29,8 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+	elif is_swimming:
+		pass
 	else:
 		if not is_swimming:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -60,3 +66,12 @@ func out_water_gravity():
 		print("grav is zero")
 	else: 
 		print("grav is on")
+
+func calculate_speed(direction: float) -> void:
+	if last_direction == direction: 
+		SPEED += acceleration
+	else:
+		SPEED = 0
+	
+	if SPEED > MAX_SPEED:
+		SPEED = MAX_SPEED
