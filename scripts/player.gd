@@ -15,6 +15,11 @@ var last_direction: float
 
 var is_swimming = false
 
+@onready var bubbles: GPUParticles2D = $bubbles
+
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+const WATER_SPLASH = preload("res://audio/water_splash.mp3")
+
 func _ready() -> void:
 	add_to_group("player")
 
@@ -97,8 +102,12 @@ func handle_land_movement(delta: float) -> void:
 func in_water_gravity():
 	print("player in water")
 	is_swimming = true
-	if is_swimming == true:
-		print("grav is zero")
+	audio_stream_player_2d.stream = WATER_SPLASH
+	audio_stream_player_2d.volume_db = -10.0
+	audio_stream_player_2d.play()
+	
+	bubbles.emitting = true
+	
 		
 func out_water_gravity():
 	print("player out of water")
@@ -108,6 +117,7 @@ func out_water_gravity():
 	else: 
 		print("grav is on")
 
+#funksjon for akselerasjon og endring av retning
 func calculate_speed(direction: float) -> void:
 	if last_direction == direction: 
 		SPEED += acceleration

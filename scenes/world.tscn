@@ -1,13 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://s36ch8poy7w6"]
+[gd_scene load_steps=9 format=3 uid="uid://s36ch8poy7w6"]
 
 [ext_resource type="PackedScene" uid="uid://dh40ftd6ea0y1" path="res://scenes/player.tscn" id="2_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://v08i8wm232wa" path="res://assets/water-low.png" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://bcw1480onuwmh" path="res://scenes/water.tscn" id="3_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://c161qaq21cn6l" path="res://assets/icon.svg" id="4_71j4m"]
+[ext_resource type="Script" uid="uid://35g8nvnw37gr" path="res://scripts/water.gd" id="4_k0juu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gv5m4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3sb7"]
 size = Vector2(350, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
+size = Vector2(2792, 1285)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfnet"]
 
 [node name="world" type="Node2D"]
 
@@ -28,9 +34,21 @@ texture = ExtResource("2_rwgxs")
 [node name="player" parent="." instance=ExtResource("2_fj7yv")]
 position = Vector2(170, 451)
 
-[node name="water" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(825, 1621)
-gravity_space_override = 0
-gravity = 0.0
-size_x = 2000.0
-size_y = 2000.0
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(489, 1062)
+script = ExtResource("4_k0juu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-15, 219.5)
+shape = SubResource("RectangleShape2D_4wyf3")
+
+[node name="Sprite2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+shape = SubResource("RectangleShape2D_qfnet")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+texture = ExtResource("4_71j4m")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
