@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://s36ch8poy7w6"]
+[gd_scene load_steps=8 format=3 uid="uid://s36ch8poy7w6"]
 
 [ext_resource type="PackedScene" uid="uid://dh40ftd6ea0y1" path="res://scenes/player.tscn" id="2_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://imasuu1n54re" path="res://assets/blue-background.png" id="4_71j4m"]
 [ext_resource type="Script" uid="uid://35g8nvnw37gr" path="res://scripts/water.gd" id="4_k0juu"]
-[ext_resource type="PackedScene" uid="uid://cixa1oe1auol" path="res://wave_shader.tscn" id="4_qfnet"]
+[ext_resource type="PackedScene" uid="uid://cixa1oe1auol" path="res://scenes/wave_shader.tscn" id="4_qfnet"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gv5m4"]
 
@@ -29,7 +30,14 @@ position = Vector2(158, 451)
 position = Vector2(489, 1062)
 script = ExtResource("4_k0juu")
 
+[node name="Blue-background" type="Sprite2D" parent="Area2D"]
+z_index = -1
+position = Vector2(-18.5, 372.5)
+scale = Vector2(1.74688, 0.989375)
+texture = ExtResource("4_71j4m")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = -2
 position = Vector2(-15, 219.5)
 shape = SubResource("RectangleShape2D_4wyf3")
 

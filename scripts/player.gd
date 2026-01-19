@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+# Landvariabler
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
 @export var MAX_SPEED = 100
@@ -19,6 +19,8 @@ var is_swimming = false
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 const WATER_SPLASH = preload("res://audio/water_splash.mp3")
+
+@onready var point_light_2d: PointLight2D = $PointLight2D
 
 func _ready() -> void:
 	add_to_group("player")
@@ -108,14 +110,13 @@ func in_water_gravity():
 	
 	bubbles.emitting = true
 	
+	point_light_2d.enabled = true
 		
 func out_water_gravity():
 	print("player out of water")
 	is_swimming = false 
-	if is_swimming == true: 
-		print("grav is zero")
-	else: 
-		print("grav is on")
+	
+	point_light_2d.enabled = false
 
 #funksjon for akselerasjon og endring av retning
 func calculate_speed(direction: float) -> void:
@@ -123,6 +124,5 @@ func calculate_speed(direction: float) -> void:
 		SPEED += acceleration
 	else:
 		SPEED = 0
-	
 	if SPEED > MAX_SPEED:
 		SPEED = MAX_SPEED
