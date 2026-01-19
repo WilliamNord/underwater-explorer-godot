@@ -18,7 +18,6 @@ texture = ExtResource("1_4flbx")
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
 position_smoothing_enabled = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
