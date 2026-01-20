@@ -18,7 +18,7 @@ void fragment() {
 	} else {
 		newuv.x += TIME * velocity;
 	}
-	
-	vec4 c = texture(TEXTURE, newuv); 
+
+	vec4 c = texture(TEXTURE, newuv);
 	COLOR = c;
 }
