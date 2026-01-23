@@ -29,8 +29,8 @@ pitch_scale = 1.3
 [node name="bubbles" parent="." instance=ExtResource("4_dqkch")]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+show_behind_parent = true
 scale = Vector2(2.97297, 2.97297)
-enabled = false
 color = Color(1, 1, 0.741176, 1)
 shadow_enabled = true
 texture = ExtResource("5_qlg0r")
