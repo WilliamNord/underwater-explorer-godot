@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=4 uid="uid://s36ch8poy7w6"]
+[gd_scene load_steps=23 format=4 uid="uid://s36ch8poy7w6"]
 
 [ext_resource type="PackedScene" uid="uid://dh40ftd6ea0y1" path="res://scenes/player.tscn" id="2_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://imasuu1n54re" path="res://assets/blue-background.png" id="4_71j4m"]
 [ext_resource type="Script" uid="uid://35g8nvnw37gr" path="res://scripts/water.gd" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://cixa1oe1auol" path="res://scenes/wave_shader.tscn" id="4_qfnet"]
 [ext_resource type="Texture2D" uid="uid://dbvr30q4bkr7u" path="res://assets/tilemap.png" id="5_71j4m"]
+[ext_resource type="Texture2D" uid="uid://cpl6bwlbnqvr5" path="res://assets/light_texture.jpeg" id="6_qfnet"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gv5m4"]
 
@@ -26,7 +27,7 @@ polygon = PackedVector2Array(-8, -0.744987, -6.45613, 0.466894, -5.0529, 2.63552
 polygon = PackedVector2Array(-8, 8, -8, 5.97074, -6.03718, 6.92978, -6.23799, 3.11646, -7.11953, 2.10168, -8, 1.96468, -8, 0.877741, -7.08279, 0.919981, -7.04144, -2.04961, -8, -1.94685, -8, -3.05057, -6.02485, -3.04428, -6.09335, -6.88046, -7.12503, -8, 8, -8, 8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4mrxx"]
-polygon = PackedVector2Array(8, -8, -8, -8, -8, -6, -6, -6, -6, -3, -7, -3, -7, -1, -8, -1, -8, 2, -7, 2, -7.00073, 4.95908, -8, 5.0072, -7, 6, -7, 7, -4, 7, -4, 6, 0, 6, 0, 8, 2, 8, 2, 7, 8, 7)
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 7, 2, 7, 2, 8, 0, 8, 0, 6, -4, 6, -4, 7, -7, 7, -7.06424, 6.03639, -8, 6, -8, 4.86284, -7, 5, -7, 2, -8, 2, -8, -1, -7, -1, -7, -3, -6, -3, -6, -6, -8, -6)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7r4gi"]
 polygon = PackedVector2Array(-8, -7.25175, -5.14397, -8, -3.11646, -6.23799, -2.9475, -8, -0.877741, -8, -0.919981, -7.08279, 1.86785, -7.12503, 3.05057, -8, 4.86689, -6.15351, 4.99361, -8, 7.23232, -8, 8, -7.12503, 8, 8, -8, 8)
@@ -117,9 +118,20 @@ shape = SubResource("RectangleShape2D_4wyf3")
 position = Vector2(643, 600)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(2, 0)
 scale = Vector2(7, 7)
 tile_map_data = PackedByteArray("AAAHAAsAAgABAAEAAAAHAAwAAgABAAMAAAAIAAwAAgACAAMAAAAJAA0AAgABAAMAAAAKAA0AAgACAAMAAAALAA0AAgADAAMAAAALAAwAAgACAAIAAAAMAAwAAgADAAMAAAAMAAsAAgADAAIAAAANAAsAAgAAAAAAAAAMAAoAAgADAAEAAAALAAoAAgACAAEAAAAKAAoAAgACAAEAAAAKAAsAAgACAAIAAAAJAAsAAgACAAIAAAAJAAwAAgACAAIAAAAKAAwAAgACAAIAAAALAAsAAgACAAIAAAAIAAsAAgACAAEAAAAJAAoAAgABAAEAAAA=")
 tile_set = SubResource("TileSet_i7141")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(436, 1)
+texture = ExtResource("6_qfnet")
+texture_scale = 23.51
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(565, -236)
+color = Color(0, 0, 0, 1)
+blend_mode = 2
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
