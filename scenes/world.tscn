@@ -125,7 +125,6 @@ tile_map_data = PackedByteArray("AAAHAAsAAgABAAEAAAAHAAwAAgABAAMAAAAIAAwAAgACAAM
 tile_set = SubResource("TileSet_i7141")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(418, 12)
 scale = Vector2(1.22769, 1.22769)
 texture = ExtResource("6_qfnet")
@@ -134,7 +133,6 @@ texture_scale = 23.51
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(565, -236)
 color = Color(0, 0, 0, 1)
-energy = 0.86
 blend_mode = 2
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

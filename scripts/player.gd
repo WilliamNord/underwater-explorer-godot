@@ -20,7 +20,9 @@ var is_swimming = false
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 const WATER_SPLASH = preload("res://audio/water_splash.mp3")
 
-@onready var point_light_2d: PointLight2D = $PointLight2D
+@onready var shadow_light: PointLight2D = $shadow_light
+@onready var sprite_light: PointLight2D = $sprite_light
+
 
 func _ready() -> void:
 	add_to_group("player")
@@ -110,13 +112,15 @@ func in_water_gravity():
 	
 	bubbles.emitting = true
 	
-	point_light_2d.enabled = true
+	shadow_light.enabled = true
+	sprite_light.enabled = true
 		
 func out_water_gravity():
 	print("player out of water")
 	is_swimming = false 
 	
-	point_light_2d.enabled = false
+	shadow_light.enabled = false
+	sprite_light.enabled = false
 
 #funksjon for akselerasjon og endring av retning
 func calculate_speed(direction: float) -> void:
