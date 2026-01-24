@@ -10,6 +10,7 @@
 size = Vector2(116, 114)
 
 [node name="player" type="CharacterBody2D"]
+light_mask = 3
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
