@@ -29,7 +29,7 @@ res://
 
 ## innstaleringsprosess:
 1. Last ned prosjektet lokalt
-   - ´´´git clone <repo-url>´´´
+   - ```git clone <repo-url>
 
 ## Spilldemonstrasjon (26.Janurar.2026)
 
