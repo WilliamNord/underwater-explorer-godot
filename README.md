@@ -16,11 +16,11 @@ All teknologien brukt i dette prosjektet er _Godot_ og _Asprite_.
 Prosjektet sine filer er delt inn i de fem mappene:
 
 res://
--> assets
--> audio
--> scenes
--> scripts
--> shaders
+- assets #sprites og tilemaps
+- audio #lydeffekter 
+- scenes #alle tcns filer (Text Scenes), leselig format av scene data.
+- scripts #alle .gd filer 
+- shaders #alle .shaderfiler
 
 ## innstaleringsprosess:
 
@@ -28,7 +28,6 @@ res://
 
 Dette er en liten demonstrasjon av spillet som det er i dette punktet i prosjektet:
 - <video src="https://github.com/user-attachments/assets/5a317657-47fb-4241-982d-5a2f955c3650" controls width="600"/>
-- https://github.com/user-attachments/assets/5a317657-47fb-4241-982d-5a2f955c3650
 
 
 
