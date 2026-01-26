@@ -13,7 +13,7 @@ Dette er et spill som handler om å dykke dypt ned i **mørkt** og **ukjent** va
 ## teknologi
 All teknologien brukt i dette prosjektet er _Godot_ og _Asprite_.
 
-- **Spillmottor:** Godot
+- **Spillmotor:** Godot
 - **Sprites og Grafikk:** Asprite
 
 
@@ -23,7 +23,7 @@ Prosjektet sine filer er delt inn i de fem mappene:
 res://
 - assets/ # sprites og tilemaps
 - audio/ # lydeffekter og musikk
-- scenes/ # alle tcns filer (Text Scenes), leselig format av scene data.
+- scenes/ # alle tcns filer (Text Scenes), leselig format av scenedata.
 - scripts/ # alle .gd filer 
 - shaders/ # alle .shader filer
 
@@ -41,7 +41,7 @@ res://
 4. Finn og velg prosjektfilen
 5. Trykk *import*
 
-## Spilldemonstrasjon (26.Janurar.2026)
+## Spilldemonstrasjon (26.januar 2026)
 
 Dette er en liten demonstrasjon av spillet som det er i dette punktet i prosjektet:
 - <video src="https://github.com/user-attachments/assets/5a317657-47fb-4241-982d-5a2f955c3650" controls width="600"/>
