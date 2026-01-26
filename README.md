@@ -36,9 +36,10 @@ res://
    - hvis du ikke har godot eller ha en utdatert versjon: https://godotengine.org/
 3. Trykk *import*
    - Eller:
-   - Command + I
-   - CTLR + I
-4.
+   - Mac: Command + I
+   - Windows: Ctrl + I
+4. Finn og velg prosjektfilen
+5. Trykk *import*
 
 ## Spilldemonstrasjon (26.Janurar.2026)
 
