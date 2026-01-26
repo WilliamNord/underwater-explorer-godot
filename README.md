@@ -34,6 +34,11 @@ res://
    - Trykk på *code* -> *Download zip* i github
 2. Åpne godot
    - hvis du ikke har godot eller ha en utdatert versjon: https://godotengine.org/
+3. Trykk *import*
+   - Eller:
+   - Command + I
+   - CTLR + I
+4.
 
 ## Spilldemonstrasjon (26.Janurar.2026)
 
