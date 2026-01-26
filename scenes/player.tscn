@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cpl6bwlbnqvr5" path="res://assets/light_texture.jpeg" id="5_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(116, 114)
+size = Vector2(104, 100)
 
 [node name="player" type="CharacterBody2D"]
 light_mask = 3
@@ -22,6 +22,7 @@ shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+position_smoothing_speed = 3.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qhqgy")
