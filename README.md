@@ -8,8 +8,8 @@ Dette er et spill som handler om å dykke dypt ned i mørtk og ukjent vann. Du m
 ## teknologi
 All teknologien brukt i dette prosjektet er _Godot_ og _Asprite_.
 
-**Spillmottor:** Godot
-**Sprites og Grafikk:** Asprite
+- **Spillmottor:** Godot
+- **Sprites og Grafikk:** Asprite
 
 
 ## Struktur
