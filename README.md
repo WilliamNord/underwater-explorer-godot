@@ -1,3 +1,8 @@
+![Engine](https://img.shields.io/badge/Engine-Godot-blue)
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Genre](https://img.shields.io/badge/Genre-Exploration%20Game-green)
+
+
 # Tittel: *to be determined*
 
 ## Dette prosjektet er et spill som jeg lager i "Godot". SPillet jeg lager er sterkt inspirert av "_Dave the diver_" og andre spill i samme sjanger.
@@ -20,7 +25,7 @@ res://
 - audio/ # lydeffekter og musikk
 - scenes/ # alle tcns filer (Text Scenes), leselig format av scene data.
 - scripts/ # alle .gd filer 
-- shaders/ # alle .shaderfiler
+- shaders/ # alle .shader filer
 
 ## innstaleringsprosess:
 
