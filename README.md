@@ -31,7 +31,9 @@ res://
 1. Last ned prosjektet lokalt
    - ```git clone <repo-url>```
    - ELLER
-   - Trykk på *code* -> *Download zip*
+   - Trykk på *code* -> *Download zip* i github
+2. Åpne godot
+   - hvis du ikke har godot eller ha en utdatert versjon: https://godotengine.org/
 
 ## Spilldemonstrasjon (26.Janurar.2026)
 
