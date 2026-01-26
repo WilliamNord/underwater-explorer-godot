@@ -30,6 +30,8 @@ res://
 ## innstaleringsprosess:
 1. Last ned prosjektet lokalt
    - ```git clone <repo-url>```
+   - ELLER
+   - Trykk på *code* -> *Download zip*
 
 ## Spilldemonstrasjon (26.Janurar.2026)
 
