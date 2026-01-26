@@ -14,4 +14,10 @@ res://
 -> scenes
 -> scripts
 -> shaders
-<img width="280" height="280" alt="cold_WoU" src="https://github.com/user-attachments/assets/41df6c02-774d-4dbf-ab92-3238c6c90e91" />
+
+
+Dette er en liten demonstrasjon av spillet som det er i 26.Januar.2026
+https://github.com/user-attachments/assets/5a317657-47fb-4241-982d-5a2f955c3650
+
+
+
