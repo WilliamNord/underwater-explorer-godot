@@ -1,4 +1,6 @@
-Tittel: *to be determined*
+# Tittel: *to be determined*
+
+## Dette er et spill som handler om å dykke dypt ned i mørtk og ukjent vann for å finne søppel og andre materialer du kan bruke til å oppgradere degselv.
 
 Dette prosjektet er et spill som jeg lager i "Godot". SPillet jeg lager er sterkt inspirert av "_Dave the diver_" og andre spill i samme sjanger.
 
