@@ -8,9 +8,12 @@ Dette er et spill som handler om å dykke dypt ned i mørtk og ukjent vann. Du m
 ## teknologi
 All teknologien brukt i dette prosjektet er _Godot_ og _Asprite_.
 
-Prosjektet sine filer er delt inn i de fem mappene:
+**Spillmottor:** Godot
+**Sprites og Grafikk:** Asprite
 
-innstaleringsprosess:
+
+## Struktur
+Prosjektet sine filer er delt inn i de fem mappene:
 
 res://
 -> assets
@@ -19,6 +22,7 @@ res://
 -> scripts
 -> shaders
 
+## innstaleringsprosess:
 
 Dette er en liten demonstrasjon av spillet som det er i 26.Januar.2026
 https://github.com/user-attachments/assets/5a317657-47fb-4241-982d-5a2f955c3650
