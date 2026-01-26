@@ -16,11 +16,11 @@ All teknologien brukt i dette prosjektet er _Godot_ og _Asprite_.
 Prosjektet sine filer er delt inn i de fem mappene:
 
 res://
-- assets #sprites og tilemaps
-- audio #lydeffekter 
-- scenes #alle tcns filer (Text Scenes), leselig format av scene data.
-- scripts #alle .gd filer 
-- shaders #alle .shaderfiler
+- assets/ # sprites og tilemaps
+- audio/ # lydeffekter og musikk
+- scenes/ # alle tcns filer (Text Scenes), leselig format av scene data.
+- scripts/ # alle .gd filer 
+- shaders/ # alle .shaderfiler
 
 ## innstaleringsprosess:
 
