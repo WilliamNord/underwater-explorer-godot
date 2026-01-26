@@ -24,8 +24,11 @@ res://
 
 ## innstaleringsprosess:
 
-Dette er en liten demonstrasjon av spillet som det er i 26.Januar.2026
-https://github.com/user-attachments/assets/5a317657-47fb-4241-982d-5a2f955c3650
+## Spilldemonstrasjon (26.Janurar.2026)
+
+Dette er en liten demonstrasjon av spillet som det er i dette punktet i prosjektet:
+- <video src="https://github.com/user-attachments/assets/5a317657-47fb-4241-982d-5a2f955c3650" controls width="600"/>
+- https://github.com/user-attachments/assets/5a317657-47fb-4241-982d-5a2f955c3650
 
 
 
