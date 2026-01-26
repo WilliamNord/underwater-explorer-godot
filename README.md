@@ -5,7 +5,7 @@
 
 # Tittel: *to be determined*
 
-## Dette prosjektet er et spill som jeg lager i Godot. Spillet jeg lager er sterkt inspirert av "_Dave the diver_" og andre spill i samme sjanger.
+## Dette prosjektet er et spill som jeg lager i Godot. Spillet jeg lager er sterkt inspirert av spillet "_Dave the diver_" og andre spill i samme sjanger.
 
 ## Gameplay (konsept)
 Dette er et spill som handler om å dykke dypt ned i **mørkt** og **ukjent** vann. Du må finne søppel og andre materialer du kan bruke til å oppgradere deg selv og ditt trofaste lys, Men er det **bare** deg og lyset ditt som er i vannet?
