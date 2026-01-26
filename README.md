@@ -16,6 +16,7 @@ All teknologien brukt i dette prosjektet er _Godot_ og _Asprite_.
 - **Spillmottor:** Godot
 - **Sprites og Grafikk:** Asprite
 
+---
 
 ## Struktur
 Prosjektet sine filer er delt inn i de fem mappene:
