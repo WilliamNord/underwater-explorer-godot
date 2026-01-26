@@ -33,7 +33,7 @@ res://
    - ELLER
    - Trykk på *code* -> *Download zip* i github
 2. Åpne godot
-   - hvis du ikke har godot eller ha en utdatert versjon: https://godotengine.org/
+   - hvis du ikke har godot eller har en utdatert versjon: https://godotengine.org/
 3. Trykk *import*
    - Eller:
    - Mac: Command + I
