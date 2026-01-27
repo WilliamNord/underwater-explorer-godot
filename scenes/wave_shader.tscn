@@ -23,6 +23,7 @@ shader_parameter/freq = 80.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_moyw3"]
 
 [node name="waves" type="Area2D"]
+texture_filter = 1
 
 [node name="main_wave" type="Sprite2D" parent="."]
 z_index = -1
