@@ -40,6 +40,10 @@ res://
    - Windows: Ctrl + I
 4. Finn og velg prosjektfilen
 5. Trykk *import*
+6. Åpne spillet
+7. - åpne scenes mappen, dobbeltrykk på world.tscn og trykk "play" knappen i høyre hjørne
+   - ELLER
+   - trykk CMD + B / Ctrl + B
 
 ## Spilldemonstrasjon (26.januar 2026)
 
