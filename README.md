@@ -41,7 +41,7 @@ res://
 4. Finn og velg prosjektfilen
 5. Trykk *import*
 6. Åpne spillet
-7. - åpne scenes mappen og dobbeltrykk på world.tscn
+7. - åpne scenes mappen, dobbeltrykk på world.tscn og trykk "play" knappen i høyre hjørne
    - ELLER
    - trykk CMD + B / Ctrl + B
 
