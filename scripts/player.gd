@@ -6,8 +6,8 @@ extends CharacterBody2D
 @export var MAX_SPEED = 100
 
 # Svømmevariabler
-@export var SWIM_ACCELERATION = 400.0
-@export var SWIM_MAX_SPEED = 250.0
+@export var SWIM_ACCELERATION = 500.0
+@export var SWIM_MAX_SPEED = 300.0
 @export var SWIM_FRICTION = 250.0
 
 var acceleration := 2.5

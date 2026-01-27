@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=4 uid="uid://s36ch8poy7w6"]
 
-[ext_resource type="Script" uid="uid://bgukvlkpaflmq" path="res://scenes/world_setup.gd" id="1_4mrxx"]
+[ext_resource type="Script" uid="uid://bgukvlkpaflmq" path="res://scripts/world_setup.gd" id="1_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://dh40ftd6ea0y1" path="res://scenes/player.tscn" id="2_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://imasuu1n54re" path="res://assets/blue-background.png" id="4_71j4m"]
 [ext_resource type="Script" uid="uid://35g8nvnw37gr" path="res://scripts/water.gd" id="4_k0juu"]
@@ -134,7 +134,6 @@ texture = ExtResource("4_71j4m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ocean"]
 z_index = -2
 position = Vector2(-491.499, 1282.41)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4wyf3")
 
 [node name="waves" parent="." instance=ExtResource("4_qfnet")]

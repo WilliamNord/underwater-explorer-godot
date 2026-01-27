@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cixa1oe1auol"]
+[gd_scene load_steps=9 format=3 uid="uid://cixa1oe1auol"]
 
 [ext_resource type="Script" uid="uid://dljyoy8aftfib" path="res://scenes/wave_shader.gd" id="1_phvxp"]
 [ext_resource type="Shader" uid="uid://bpk2iukfe66ns" path="res://shaders/main_wave.gdshader" id="1_sdrir"]
 [ext_resource type="Texture2D" uid="uid://g51acu2ehvd6" path="res://assets/wave_full.png" id="2_c5eba"]
 [ext_resource type="Shader" uid="uid://b8ggaylri82r3" path="res://shaders/sub_wave.gdshader" id="3_moyw3"]
+[ext_resource type="Texture2D" uid="uid://uxp5ov6a7gby" path="res://assets/wave_stripped.png" id="5_dryl3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wfu58"]
 shader = ExtResource("1_sdrir")
@@ -42,7 +43,7 @@ texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_s3jda")
 position = Vector2(2, 67)
-texture = ExtResource("2_c5eba")
+texture = ExtResource("5_dryl3")
 region_enabled = true
 region_rect = Rect2(0, 0, 3000, 160)
 
