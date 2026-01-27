@@ -15,7 +15,7 @@
 size = Vector2(350, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
-size = Vector2(6730, 3416)
+size = Vector2(6753, 3409.26)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_71j4m"]
 
@@ -122,6 +122,7 @@ position = Vector2(158, 451)
 
 [node name="Ocean" type="Area2D" parent="."]
 position = Vector2(489, 1062)
+scale = Vector2(1, 1.08)
 script = ExtResource("4_k0juu")
 
 [node name="Blue-background" type="Sprite2D" parent="Ocean"]
@@ -132,12 +133,12 @@ texture = ExtResource("4_71j4m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ocean"]
 z_index = -2
-position = Vector2(-494, 1281)
+position = Vector2(-491.499, 1282.41)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4wyf3")
 
 [node name="waves" parent="." instance=ExtResource("4_qfnet")]
-position = Vector2(643, 600)
-wave_width = 10000
+position = Vector2(648, 571)
 wave_height = 90
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
