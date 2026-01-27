@@ -50,8 +50,8 @@ Hvis du heller har lyst på den nyeste av de nyeste versjonene og tilgang til al
 2. Åpne godot
    - hvis du ikke har godot eller har en utdatert versjon: https://godotengine.org/
 3. Trykk *import*
-   - Eller:
-   - Mac: Command + I
+   - ELLER
+   - Mac: CMD + I
    - Windows: Ctrl + I
 4. Finn og velg prosjektfilen
 5. Trykk *import*
