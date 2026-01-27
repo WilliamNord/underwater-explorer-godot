@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://s36ch8poy7w6"]
+[gd_scene load_steps=27 format=4 uid="uid://s36ch8poy7w6"]
 
 [ext_resource type="Script" uid="uid://bgukvlkpaflmq" path="res://scripts/world_setup.gd" id="1_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://dh40ftd6ea0y1" path="res://scenes/player.tscn" id="2_fj7yv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dbvr30q4bkr7u" path="res://assets/tilemap.png" id="5_71j4m"]
 [ext_resource type="Texture2D" uid="uid://c3lm3rqsrn5s1" path="res://assets/tilemap_retouched.png" id="5_i7141"]
 [ext_resource type="Texture2D" uid="uid://cpl6bwlbnqvr5" path="res://assets/light_texture.jpeg" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://vp7aptuo3434" path="res://godrays.tscn" id="9_7r4gi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gv5m4"]
 
@@ -136,6 +137,17 @@ z_index = -2
 position = Vector2(-491.499, 1282.41)
 shape = SubResource("RectangleShape2D_4wyf3")
 
+[node name="godrays" parent="Ocean" instance=ExtResource("9_7r4gi")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -3839.0
+offset_top = -421.0
+offset_right = 2885.0
+offset_bottom = 2976.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="waves" parent="." instance=ExtResource("4_qfnet")]
 position = Vector2(648, 571)
 wave_height = 90
@@ -148,14 +160,14 @@ tile_map_data = PackedByteArray("AAAHAAsAAgABAAEAAAAHAAwAAgABAAMAAAAIAAwAAgACAAM
 tile_set = SubResource("TileSet_i7141")
 
 [node name="sun" type="PointLight2D" parent="."]
-position = Vector2(625, -69)
-scale = Vector2(4.07072, 1.19899)
+position = Vector2(5, 582.412)
+scale = Vector2(2.96079, 1.19649)
+energy = 1.55
 texture = ExtResource("6_qfnet")
 texture_scale = 23.51
 
 [node name="darkness_light" type="DirectionalLight2D" parent="."]
 position = Vector2(565, -236)
-enabled = false
 color = Color(0, 0, 0, 1)
 blend_mode = 2
 
