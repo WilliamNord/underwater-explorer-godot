@@ -113,11 +113,11 @@ sources/0 = SubResource("TileSetAtlasSource_4mrxx")
 [node name="world" type="Node2D"]
 script = ExtResource("1_4mrxx")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="land" type="StaticBody2D" parent="."]
 position = Vector2(131, 551)
 physics_material_override = SubResource("PhysicsMaterial_gv5m4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="land"]
 position = Vector2(41, 33)
 shape = SubResource("RectangleShape2D_f3sb7")
 
@@ -138,7 +138,7 @@ texture = ExtResource("4_71j4m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ocean"]
 z_index = -2
-position = Vector2(-491.499, 1282.41)
+position = Vector2(-485, 1282.41)
 shape = SubResource("RectangleShape2D_4wyf3")
 
 [node name="godrays" parent="Ocean" instance=ExtResource("9_7r4gi")]
@@ -179,6 +179,13 @@ position = Vector2(565, -236)
 enabled = false
 color = Color(0, 0, 0, 1)
 blend_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 1444.0
+offset_top = 1109.0
+offset_right = 2960.0
+offset_bottom = 1746.0
 
 [connection signal="body_entered" from="Ocean" to="Ocean" method="_on_body_entered"]
 [connection signal="body_exited" from="Ocean" to="Ocean" method="_on_body_exited"]

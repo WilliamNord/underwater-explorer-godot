@@ -5,9 +5,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3b5t7"]
 shader = ExtResource("1_fgs8n")
-shader_parameter/angle = 0.7
-shader_parameter/position = 0.3
-shader_parameter/spread = 0.441
+shader_parameter/angle = 0.48
+shader_parameter/position = 0.22
+shader_parameter/spread = 0.898
 shader_parameter/cutoff = 0.253
 shader_parameter/falloff = 1.0
 shader_parameter/edge_fade = 0.244
@@ -15,7 +15,7 @@ shader_parameter/speed = 2.22
 shader_parameter/ray1_density = 10.61
 shader_parameter/ray2_density = 30.41
 shader_parameter/ray2_intensity = 0.281
-shader_parameter/color = Color(0.636364, 0.987939, 0.921808, 0.8)
+shader_parameter/color = Color(1, 1, 1, 0.8)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
 
