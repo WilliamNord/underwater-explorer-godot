@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://s36ch8poy7w6"]
+[gd_scene load_steps=28 format=4 uid="uid://s36ch8poy7w6"]
 
 [ext_resource type="Script" uid="uid://bgukvlkpaflmq" path="res://scripts/world_setup.gd" id="1_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://dh40ftd6ea0y1" path="res://scenes/player.tscn" id="2_fj7yv"]
@@ -17,6 +17,9 @@ size = Vector2(350, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
 size = Vector2(6753, 3409.26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r4gi"]
+size = Vector2(6744, 93.5188)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_71j4m"]
 
@@ -119,7 +122,7 @@ position = Vector2(41, 33)
 shape = SubResource("RectangleShape2D_f3sb7")
 
 [node name="player" parent="." instance=ExtResource("2_fj7yv")]
-position = Vector2(158, 451)
+position = Vector2(154, 451)
 
 [node name="Ocean" type="Area2D" parent="."]
 position = Vector2(489, 1062)
@@ -128,6 +131,7 @@ script = ExtResource("4_k0juu")
 
 [node name="Blue-background" type="Sprite2D" parent="Ocean"]
 z_index = -1
+texture_filter = 6
 position = Vector2(-491.996, 1282)
 scale = Vector2(4.22125, 2.13125)
 texture = ExtResource("4_71j4m")
@@ -141,12 +145,16 @@ shape = SubResource("RectangleShape2D_4wyf3")
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -3839.0
+offset_left = -523.0
 offset_top = -421.0
 offset_right = 2885.0
-offset_bottom = 2976.0
+offset_bottom = 1390.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ocean"]
+position = Vector2(-490, 1248.61)
+shape = SubResource("RectangleShape2D_7r4gi")
 
 [node name="waves" parent="." instance=ExtResource("4_qfnet")]
 position = Vector2(648, 571)
@@ -160,14 +168,15 @@ tile_map_data = PackedByteArray("AAAHAAsAAgABAAEAAAAHAAwAAgABAAMAAAAIAAwAAgACAAM
 tile_set = SubResource("TileSet_i7141")
 
 [node name="sun" type="PointLight2D" parent="."]
-position = Vector2(5, 582.412)
-scale = Vector2(2.96079, 1.19649)
+position = Vector2(-74, 332)
+scale = Vector2(2.96079, 1.36704)
 energy = 1.55
 texture = ExtResource("6_qfnet")
 texture_scale = 23.51
 
 [node name="darkness_light" type="DirectionalLight2D" parent="."]
 position = Vector2(565, -236)
+enabled = false
 color = Color(0, 0, 0, 1)
 blend_mode = 2
 
