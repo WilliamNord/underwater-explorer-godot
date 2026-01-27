@@ -28,6 +28,8 @@ res://
 - shaders/ # alle .shader filer
 
 ## innstaleringsprosess:
+Hvis du har lyst til å bare teste spillet så enkelt som mulig, kan du laste ned demo-releases her: <link />
+
 1. Last ned prosjektet lokalt
    - ```git clone <repo-url>```
    - ELLER
