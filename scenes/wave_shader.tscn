@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cixa1oe1auol"]
+[gd_scene load_steps=8 format=3 uid="uid://cixa1oe1auol"]
 
+[ext_resource type="Script" uid="uid://dljyoy8aftfib" path="res://scenes/wave_shader.gd" id="1_phvxp"]
 [ext_resource type="Shader" uid="uid://bpk2iukfe66ns" path="res://shaders/main_wave.gdshader" id="1_sdrir"]
 [ext_resource type="Texture2D" uid="uid://g51acu2ehvd6" path="res://assets/wave_full.png" id="2_c5eba"]
 [ext_resource type="Shader" uid="uid://b8ggaylri82r3" path="res://shaders/sub_wave.gdshader" id="3_moyw3"]
@@ -24,6 +25,7 @@ shader_parameter/freq = 80.0
 
 [node name="waves" type="Area2D"]
 texture_filter = 1
+script = ExtResource("1_phvxp")
 
 [node name="main_wave" type="Sprite2D" parent="."]
 z_index = -1
@@ -31,13 +33,18 @@ texture_repeat = 2
 material = SubResource("ShaderMaterial_wfu58")
 position = Vector2(2, 0)
 texture = ExtResource("2_c5eba")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 160)
 
 [node name="sub_wave" type="Sprite2D" parent="."]
 z_index = 1
+texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_s3jda")
-position = Vector2(2, 81)
+position = Vector2(2, 67)
 texture = ExtResource("2_c5eba")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 160)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_moyw3")

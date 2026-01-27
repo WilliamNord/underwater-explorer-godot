@@ -7,10 +7,12 @@ uniform float speed = 4.0;
 uniform float height = 1.0;
 uniform float freq = 14.0;
 
-void vertex() {
-	VERTEX.y += height * cos((UV.x * freq) * (speed * TIME));
-}
+//wobble
+//void vertex() {
+	//VERTEX.y += height * cos((UV.x * freq) * (speed * TIME));
+//}
 
+//wave
 void fragment() {
 	vec2 newuv = UV;
 	if (inverted) {
