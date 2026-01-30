@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cixa1oe1auol"]
 
-[ext_resource type="Script" uid="uid://dljyoy8aftfib" path="res://scenes/wave_shader.gd" id="1_phvxp"]
+[ext_resource type="Script" uid="uid://dljyoy8aftfib" path="res://scripts/wave_shader.gd" id="1_phvxp"]
 [ext_resource type="Shader" uid="uid://bpk2iukfe66ns" path="res://shaders/main_wave.gdshader" id="1_sdrir"]
 [ext_resource type="Texture2D" uid="uid://g51acu2ehvd6" path="res://assets/wave_full.png" id="2_c5eba"]
 [ext_resource type="Shader" uid="uid://b8ggaylri82r3" path="res://shaders/sub_wave.gdshader" id="3_moyw3"]
