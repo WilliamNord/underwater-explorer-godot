@@ -8,26 +8,41 @@
 ## Dette prosjektet er et spill som jeg lager i Godot. Spillet jeg lager er sterkt inspirert av spillet "_Dave the diver_" og andre spill i samme sjanger.
 
 ## Gameplay (konsept)
-Dette er et spill som handler om å dykke dypt ned i **mørkt** og **ukjent** vann. Du må finne søppel og andre materialer du kan bruke til å oppgradere deg selv og ditt trofaste lys, Men er det **bare** deg og lyset ditt som er i vannet?
+Du dykker ned i **mørkt** og **ukjent** vann på jakt etter ressurser, søppel og skjulte materialer som kan brukes til å oppgradere utstyr og det trofaste dykkerlyset ditt.
 
-## teknologi
-All teknologien brukt i dette prosjektet er _Godot_ og _Asprite_.
+Men jo dypere du går… desto mer begynner du å lure på om det virkelig bare er deg der nede.
 
-- **Spillmotor:** Godot
-- **Sprites og Grafikk:** Asprite
+## Spilldemonstrasjon (26.januar 2026)
+
+Dette er en liten demonstrasjon av spillet som det er i dette punktet i prosjektet:
+- <video src="https://github.com/user-attachments/assets/5a317657-47fb-4241-982d-5a2f955c3650" controls width="600"/>
+
+## Teknologi
+
+- **Spillmotor:** Godot 4.4.1
+- **Grafikk:** Aseprite  
+- **Språk:** GDScript
 
 
 ## Struktur
 Prosjektet sine filer er delt inn i de fem mappene:
 
+```
 res://
-- assets/ # sprites og tilemaps
-- audio/ # lydeffekter og musikk
-- scenes/ # alle tcns filer (Text Scenes), leselig format av scenedata.
-- scripts/ # alle .gd filer 
-- shaders/ # alle .shader filer
+│
+├── assets/     # Sprites og tilemaps
+├── audio/      # Lydeffekter og musikk
+├── scenes/     # .tscn-filer (scener)
+├── scripts/    # .gd-filer
+└── shaders/    # Shader-filer
+```
 
-## innstaleringsprosess:
+## Installasjon
+Hvis du har lyst til å bare teste spillet så enkelt som mulig, kan du laste ned demo-releases her: 
+https://github.com/WilliamNord/underwater-explorer-godot/releases
+
+Hvis du heller har lyst på den nyeste av de nyeste versjonene og tilgang til alle filer, kan du følge denne guiden under:
+
 1. Last ned prosjektet lokalt
    - ```git clone <repo-url>```
    - ELLER
@@ -35,8 +50,8 @@ res://
 2. Åpne godot
    - hvis du ikke har godot eller har en utdatert versjon: https://godotengine.org/
 3. Trykk *import*
-   - Eller:
-   - Mac: Command + I
+   - ELLER
+   - Mac: CMD + I
    - Windows: Ctrl + I
 4. Finn og velg prosjektfilen
 5. Trykk *import*
@@ -45,10 +60,7 @@ res://
    - ELLER
    - trykk CMD + B / Ctrl + B
 
-## Spilldemonstrasjon (26.januar 2026)
 
-Dette er en liten demonstrasjon av spillet som det er i dette punktet i prosjektet:
-- <video src="https://github.com/user-attachments/assets/5a317657-47fb-4241-982d-5a2f955c3650" controls width="600"/>
 
 
 
