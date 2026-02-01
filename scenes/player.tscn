@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c86ib7t2ltqpo" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="AudioStream" uid="uid://bpmj1flovpe45" path="res://audio/water_splash.mp3" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://d2lvufqnpg7u4" path="res://scenes/bubbles.tscn" id="4_dqkch"]
-[ext_resource type="Texture2D" uid="uid://cpl6bwlbnqvr5" path="res://assets/light_texture.jpeg" id="5_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://20wfh8i1od2v" path="res://assets/light_textures/light.png" id="5_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(104, 100)
@@ -34,18 +34,15 @@ pitch_scale = 1.3
 
 [node name="shadow_light" type="PointLight2D" parent="."]
 show_behind_parent = true
-scale = Vector2(2.90021, 2.90021)
+scale = Vector2(1.125, 1.125)
 enabled = false
 color = Color(1, 1, 0.741176, 1)
-blend_mode = 2
 shadow_enabled = true
 texture = ExtResource("5_qlg0r")
-texture_scale = 1.3
 
 [node name="sprite_light" type="PointLight2D" parent="."]
 visibility_layer = 2
-scale = Vector2(2.9, 2.9)
+scale = Vector2(1.16797, 1.16797)
 enabled = false
 color = Color(1, 1, 0.741176, 1)
 texture = ExtResource("5_qlg0r")
-texture_scale = 1.3
