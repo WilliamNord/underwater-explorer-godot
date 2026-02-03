@@ -1,13 +1,51 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh40ftd6ea0y1"]
+[gd_scene load_steps=11 format=4 uid="uid://dh40ftd6ea0y1"]
 
 [ext_resource type="Texture2D" uid="uid://c161qaq21cn6l" path="res://assets/icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://c86ib7t2ltqpo" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="AudioStream" uid="uid://bpmj1flovpe45" path="res://audio/water_splash.mp3" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://d2lvufqnpg7u4" path="res://scenes/bubbles.tscn" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://20wfh8i1od2v" path="res://assets/light_textures/light.png" id="5_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://ddo3opktak1nh" path="res://assets/light_textures/FREE Textures Of Light/512x512/512x512 textures (71).png" id="6_fjrip"]
+[ext_resource type="Texture2D" uid="uid://c3lm3rqsrn5s1" path="res://assets/tilemap_retouched.png" id="7_fjrip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(104, 100)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_smehm"]
+texture = ExtResource("7_fjrip")
+0:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ur7pv"]
+sources/0 = SubResource("TileSetAtlasSource_smehm")
 
 [node name="player" type="CharacterBody2D"]
 light_mask = 3
@@ -45,4 +83,11 @@ visibility_layer = 2
 scale = Vector2(1.16797, 1.16797)
 enabled = false
 color = Color(1, 1, 0.741176, 1)
-texture = ExtResource("5_qlg0r")
+texture = ExtResource("6_fjrip")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
+z_index = -1
+scale = Vector2(7, 7)
+tile_map_data = PackedByteArray("AAAAAP//AAAFAAYAAAD/////AAAGAAUAAAD+////AAAFAAYAAAD//wAAAAAGAAUAAAAAAAAAAAAFAAYAAAABAAAAAAAGAAUAAAACAAAAAAAFAAYAAAACAP//AAAFAAYAAAABAP//AAAGAAUAAAABAP7/AAAFAAYAAAAAAP7/AAAFAAYAAAD///7/AAAFAAYAAAD//wEAAAAGAAUAAAAAAAEAAAAFAAYAAAABAAEAAAAGAAUAAAACAAEAAAAFAAYAAAADAAAAAAAFAAYAAAD+/wEAAAAFAAYAAAADAP7/AAAFAAYAAAAAAP3/AAAFAAYAAAABAPz/AAAFAAYAAAAAAAIAAAAFAAYAAAADAP//AAAGAAUAAAD+/wIAAAAFAAYAAAD8/wIAAAAFAAYAAAD9/wEAAAAGAAUAAAD8/wAAAAAFAAYAAAD9////AAAGAAUAAAD+/wAAAAAFAAYAAAABAP3/AAAFAAYAAAD8/wEAAAAFAAYAAAD9/wAAAAAGAAUAAAABAAIAAAAFAAYAAAD//wIAAAAFAAYAAAD9/wIAAAAFAAYAAAD7/wAAAAAFAAYAAAD7////AAAFAAYAAAD7//7/AAAFAAYAAAD8//3/AAAFAAYAAAD8//z/AAAFAAYAAAD9//z/AAAFAAYAAAD9//3/AAAFAAYAAAD9//7/AAAFAAYAAAD8//7/AAAFAAYAAAD8////AAAFAAYAAAD+//3/AAAFAAYAAAD///3/AAAFAAYAAAACAP3/AAAFAAYAAAACAP7/AAAFAAYAAAD+//7/AAAFAAYAAAADAP3/AAAFAAYAAAAEAP7/AAAFAAYAAAAEAP//AAAFAAYAAAAEAAAAAAAFAAYAAAADAAEAAAAFAAYAAAADAAIAAAAFAAYAAAACAAIAAAAFAAYAAAAEAAIAAAAFAAYAAAAEAAEAAAAFAAYAAAAEAP3/AAAFAAYAAAAEAPz/AAAFAAYAAAADAPz/AAAFAAYAAAACAPz/AAAFAAYAAAAAAPz/AAAFAAYAAAD///z/AAAFAAYAAAD+//z/AAAFAAYAAAA=")
+tile_set = SubResource("TileSet_ur7pv")

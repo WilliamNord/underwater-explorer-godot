@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://7ujmb24ttfvu"]
+[gd_scene load_steps=7 format=3 uid="uid://b7mggr3dm7n2x"]
 
-[ext_resource type="Script" uid="uid://y4vg068mgqmx" path="res://item.gd" id="1_kg5e7"]
+[ext_resource type="Script" path="res://item.gd" id="1_kg5e7"]
 [ext_resource type="Texture2D" uid="uid://bwc3h5fyulyk8" path="res://assets/fish_tilemap.png" id="1_tnite"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttk8k"]
@@ -45,6 +45,8 @@ label_settings = SubResource("LabelSettings_ttk8k")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
