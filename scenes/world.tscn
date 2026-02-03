@@ -309,7 +309,7 @@ offset_right = 2960.0
 offset_bottom = 1746.0
 
 [node name="item" parent="." instance=ExtResource("9_w7kh3")]
-position = Vector2(1143, 1088)
+position = Vector2(461, 2363)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7r4gi")
