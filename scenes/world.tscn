@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://s36ch8poy7w6"]
+[gd_scene load_steps=31 format=4 uid="uid://s36ch8poy7w6"]
 
 [ext_resource type="Script" uid="uid://bgukvlkpaflmq" path="res://scripts/world_setup.gd" id="1_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://dh40ftd6ea0y1" path="res://scenes/player.tscn" id="2_fj7yv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c3lm3rqsrn5s1" path="res://assets/tilemap_retouched.png" id="5_i7141"]
 [ext_resource type="Texture2D" uid="uid://cpl6bwlbnqvr5" path="res://assets/light_textures/light_texture.jpeg" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://vp7aptuo3434" path="res://scenes/godrays.tscn" id="9_7r4gi"]
+[ext_resource type="PackedScene" uid="uid://7ujmb24ttfvu" path="res://item.tscn" id="9_w7kh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
 size = Vector2(6753, 3409.26)
@@ -227,6 +228,9 @@ texture = ExtResource("5_i7141")
 [sub_resource type="TileSet" id="TileSet_w7kh3"]
 sources/0 = SubResource("TileSetAtlasSource_7r4gi")
 
+[sub_resource type="Environment" id="Environment_7r4gi"]
+glow_enabled = true
+
 [node name="world" type="Node2D"]
 script = ExtResource("1_4mrxx")
 
@@ -303,6 +307,12 @@ offset_left = 1444.0
 offset_top = 1109.0
 offset_right = 2960.0
 offset_bottom = 1746.0
+
+[node name="item" parent="." instance=ExtResource("9_w7kh3")]
+position = Vector2(1143, 1088)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7r4gi")
 
 [connection signal="body_entered" from="Ocean" to="Ocean" method="_on_body_entered"]
 [connection signal="body_exited" from="Ocean" to="Ocean" method="_on_body_exited"]

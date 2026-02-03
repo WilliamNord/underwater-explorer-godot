@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://7ujmb24ttfvu"]
+
+[ext_resource type="Script" uid="uid://y4vg068mgqmx" path="res://item.gd" id="1_kg5e7"]
+[ext_resource type="Texture2D" uid="uid://bwc3h5fyulyk8" path="res://assets/fish_tilemap.png" id="1_tnite"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttk8k"]
+texture = ExtResource("1_tnite")
+3:0/0 = 0
+0:0/size_in_atlas = Vector2i(2, 1)
+0:0/0 = 0
+0:1/size_in_atlas = Vector2i(2, 1)
+0:1/0 = 0
+0:2/size_in_atlas = Vector2i(2, 2)
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kg5e7"]
+sources/0 = SubResource("TileSetAtlasSource_ttk8k")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tnite"]
+radius = 108.005
+
+[sub_resource type="LabelSettings" id="LabelSettings_ttk8k"]
+font_size = 32
+
+[node name="item" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_kg5e7")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 3, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_kg5e7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(39, -35)
+shape = SubResource("CircleShape2D_tnite")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1.0
+offset_top = -129.0
+offset_right = 83.0
+offset_bottom = -49.0
+text = "E"
+label_settings = SubResource("LabelSettings_ttk8k")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
