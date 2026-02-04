@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://bpk2iukfe66ns" path="res://shaders/main_wave.gdshader" id="1_sdrir"]
 [ext_resource type="Texture2D" uid="uid://g51acu2ehvd6" path="res://assets/wave_full.png" id="2_c5eba"]
 [ext_resource type="Shader" uid="uid://b8ggaylri82r3" path="res://shaders/sub_wave.gdshader" id="3_moyw3"]
-[ext_resource type="Texture2D" uid="uid://uxp5ov6a7gby" path="res://assets/wave_stripped.png" id="5_dryl3"]
+[ext_resource type="Texture2D" uid="uid://dvu661tx1q2u5" path="res://assets/wave_stripped_alt.png" id="5_dryl3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wfu58"]
 shader = ExtResource("1_sdrir")

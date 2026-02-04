@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b7mggr3dm7n2x" path="res://scenes/item.tscn" id="9_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://bdyi55eclu10o" path="res://scenes/boat.tscn" id="10_w7kh3"]
 [ext_resource type="Texture2D" uid="uid://dkjftlygo8ere" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_1/1.png" id="11_e3hyu"]
+[ext_resource type="Texture2D" uid="uid://bkoub7cu4ecfp" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_3/3.png" id="12_q5onr"]
+[ext_resource type="Texture2D" uid="uid://4mjp7sv7k362" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_3/4.png" id="13_jhx03"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_71j4m"]
 
@@ -276,20 +278,21 @@ position = Vector2(-485, 1282.41)
 shape = SubResource("RectangleShape2D_4wyf3")
 
 [node name="godrays" parent="Ocean" unique_id=341587550 instance=ExtResource("9_7r4gi")]
+z_index = 10
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -523.0
-offset_top = -421.0
-offset_right = 2885.0
-offset_bottom = 1390.0
+offset_left = -1305.0
+offset_top = -1227.7777
+offset_right = 2103.0
+offset_bottom = 583.2223
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="sun" type="PointLight2D" parent="." unique_id=1754085916]
 position = Vector2(69, -69)
 scale = Vector2(2.96079, 1.36704)
-energy = 1.55
+energy = 1.19
 texture = ExtResource("6_qfnet")
 texture_scale = 23.51
 
@@ -321,16 +324,42 @@ texture = ExtResource("4_71j4m")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=6521635]
 z_index = -100
-scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(-5, 315)
+scroll_scale = Vector2(0.1, 0.1)
+scroll_offset = Vector2(-11, 315)
 repeat_size = Vector2(1706.458, 0)
-autoscroll = Vector2(1000, 0)
+autoscroll = Vector2(1, 0)
 repeat_times = 5
 
 [node name="1" type="Sprite2D" parent="Parallax2D" unique_id=1364406815]
 position = Vector2(371.99997, -122)
 scale = Vector2(2.962963, 2.9629629)
 texture = ExtResource("11_e3hyu")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1291569888]
+z_index = -100
+scroll_scale = Vector2(0.1, 0.1)
+scroll_offset = Vector2(-11, 315)
+repeat_size = Vector2(1706.458, 0)
+autoscroll = Vector2(1, 0)
+repeat_times = 5
+
+[node name="3" type="Sprite2D" parent="Parallax2D2" unique_id=1070871701]
+position = Vector2(309.00003, -115)
+scale = Vector2(2.993827, 2.993827)
+texture = ExtResource("12_q5onr")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1233809275]
+z_index = -100
+scroll_scale = Vector2(0.1, 0.1)
+scroll_offset = Vector2(-11, 315)
+repeat_size = Vector2(632.81, 0)
+autoscroll = Vector2(1, 0)
+repeat_times = 5
+
+[node name="4" type="Sprite2D" parent="Parallax2D3" unique_id=1979943560]
+position = Vector2(367, -224)
+scale = Vector2(1.1161269, 1.1161267)
+texture = ExtResource("13_jhx03")
 
 [connection signal="body_entered" from="Ocean" to="Ocean" method="_on_body_entered"]
 [connection signal="body_exited" from="Ocean" to="Ocean" method="_on_body_exited"]
