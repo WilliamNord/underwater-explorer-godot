@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bdyi55eclu10o"]
+
+[ext_resource type="Texture2D" uid="uid://b01b4pv74mpgw" path="res://assets/boat_tagged.png" id="1_0063d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0063d"]
+size = Vector2(692, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jsln"]
+size = Vector2(209.59283, 23.075241)
+
+[node name="boat" type="StaticBody2D" unique_id=225920541]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=267381444]
+position = Vector2(65, 130)
+shape = SubResource("RectangleShape2D_0063d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=916895674]
+texture_filter = 1
+scale = Vector2(8.958333, 8.958333)
+texture = ExtResource("1_0063d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=265472713]
+position = Vector2(-198.8753, -45.104046)
+rotation = -0.6953904
+scale = Vector2(0.99050456, 1.2473385)
+shape = SubResource("RectangleShape2D_1jsln")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1973526831]
+position = Vector2(-7.9999924, -113.999985)
+rotation = -0.04108252
+scale = Vector2(0.99050456, 1.2473385)
+shape = SubResource("RectangleShape2D_1jsln")
