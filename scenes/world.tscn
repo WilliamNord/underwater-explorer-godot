@@ -318,8 +318,8 @@ environment = SubResource("Environment_7r4gi")
 position = Vector2(5, 475)
 
 [node name="Sprite2D2" type="Sprite2D" parent="boat" unique_id=1860899986]
-position = Vector2(19.124996, 173.00002)
-scale = Vector2(0.49484372, 0.05250002)
+position = Vector2(18, 202.00002)
+scale = Vector2(0.49484372, 0.042500023)
 texture = ExtResource("4_71j4m")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=6521635]
@@ -340,7 +340,7 @@ z_index = -100
 scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(-11, 315)
 repeat_size = Vector2(1706.458, 0)
-autoscroll = Vector2(1, 0)
+autoscroll = Vector2(10, 0)
 repeat_times = 5
 
 [node name="3" type="Sprite2D" parent="Parallax2D2" unique_id=1070871701]
@@ -352,13 +352,13 @@ texture = ExtResource("12_q5onr")
 z_index = -100
 scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(-11, 315)
-repeat_size = Vector2(632.81, 0)
-autoscroll = Vector2(1, 0)
+repeat_size = Vector2(952.47, 0)
+autoscroll = Vector2(-10, 0)
 repeat_times = 5
 
 [node name="4" type="Sprite2D" parent="Parallax2D3" unique_id=1979943560]
-position = Vector2(367, -224)
-scale = Vector2(1.1161269, 1.1161267)
+position = Vector2(166, -305)
+scale = Vector2(1.6537427, 1.6537423)
 texture = ExtResource("13_jhx03")
 
 [connection signal="body_entered" from="Ocean" to="Ocean" method="_on_body_entered"]
