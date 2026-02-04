@@ -318,20 +318,27 @@ environment = SubResource("Environment_7r4gi")
 position = Vector2(5, 475)
 
 [node name="Sprite2D2" type="Sprite2D" parent="boat" unique_id=1860899986]
-position = Vector2(18, 202.00002)
-scale = Vector2(0.49484372, 0.042500023)
+position = Vector2(18, 195.50003)
+scale = Vector2(0.49484372, 0.03437503)
 texture = ExtResource("4_71j4m")
+metadata/_edit_lock_ = true
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=6521635]
 z_index = -100
 scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(-11, 315)
 repeat_size = Vector2(1706.458, 0)
-autoscroll = Vector2(1, 0)
+autoscroll = Vector2(2, 0)
 repeat_times = 5
 
-[node name="1" type="Sprite2D" parent="Parallax2D" unique_id=1364406815]
+[node name="horizon" type="Sprite2D" parent="Parallax2D" unique_id=1364406815]
 position = Vector2(371.99997, -122)
+scale = Vector2(2.962963, 2.9629629)
+texture = ExtResource("11_e3hyu")
+
+[node name="horizon_flipped" type="Sprite2D" parent="Parallax2D" unique_id=503831599]
+position = Vector2(371.99997, 765.9999)
+rotation = 3.1415882
 scale = Vector2(2.962963, 2.9629629)
 texture = ExtResource("11_e3hyu")
 
@@ -343,7 +350,7 @@ repeat_size = Vector2(1706.458, 0)
 autoscroll = Vector2(10, 0)
 repeat_times = 5
 
-[node name="3" type="Sprite2D" parent="Parallax2D2" unique_id=1070871701]
+[node name="big clouds" type="Sprite2D" parent="Parallax2D2" unique_id=1070871701]
 position = Vector2(309.00003, -115)
 scale = Vector2(2.993827, 2.993827)
 texture = ExtResource("12_q5onr")
@@ -356,7 +363,7 @@ repeat_size = Vector2(952.47, 0)
 autoscroll = Vector2(-10, 0)
 repeat_times = 5
 
-[node name="4" type="Sprite2D" parent="Parallax2D3" unique_id=1979943560]
+[node name="small clouds" type="Sprite2D" parent="Parallax2D3" unique_id=1979943560]
 position = Vector2(166, -305)
 scale = Vector2(1.6537427, 1.6537423)
 texture = ExtResource("13_jhx03")
