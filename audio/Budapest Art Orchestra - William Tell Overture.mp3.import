@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8pp8xbq55gvc"
+path="res://.godot/imported/Budapest Art Orchestra - William Tell Overture.mp3-610e797684120a1f4bef6cab0a5e85b4.mp3str"
+
+[deps]
+
+source_file="res://audio/Budapest Art Orchestra - William Tell Overture.mp3"
+dest_files=["res://.godot/imported/Budapest Art Orchestra - William Tell Overture.mp3-610e797684120a1f4bef6cab0a5e85b4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -337,7 +337,7 @@ scale = Vector2(2.962963, 2.9629629)
 texture = ExtResource("11_e3hyu")
 
 [node name="horizon_flipped" type="Sprite2D" parent="Parallax2D" unique_id=503831599]
-position = Vector2(371.99997, 765.9999)
+position = Vector2(372, 765.9999)
 rotation = 3.1415882
 scale = Vector2(2.962963, 2.9629629)
 texture = ExtResource("11_e3hyu")
