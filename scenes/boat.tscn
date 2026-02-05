@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bdyi55eclu10o"]
 
 [ext_resource type="Texture2D" uid="uid://b01b4pv74mpgw" path="res://assets/boat_tagged.png" id="1_0063d"]
-[ext_resource type="PackedScene" uid="uid://bpbgq6nlym1pw" path="res://boombox.tscn" id="2_qyrje"]
+[ext_resource type="PackedScene" uid="uid://b7nfqavbashqo" path="res://scenes/boombox.tscn" id="2_qyrje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0063d"]
 size = Vector2(692, 168)
@@ -34,4 +34,4 @@ shape = SubResource("RectangleShape2D_1jsln")
 
 [node name="boombox" parent="." unique_id=911933470 instance=ExtResource("2_qyrje")]
 z_index = -1
-position = Vector2(43, 39)
+position = Vector2(54, 37)
