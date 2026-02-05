@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cdaueah4jidj0"]
+
+[ext_resource type="Texture2D" uid="uid://dkjftlygo8ere" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_1/1.png" id="1_hjoh0"]
+
+[node name="backgound" type="ParallaxBackground" unique_id=266194217]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1775042677]
+scroll_scale = Vector2(0.2, 0.2)
+
+[node name="1" type="Sprite2D" parent="." unique_id=203243550]
+position = Vector2(797, 443.00012)
+scale = Vector2(2.7777777, 2.7777777)
+texture = ExtResource("1_hjoh0")

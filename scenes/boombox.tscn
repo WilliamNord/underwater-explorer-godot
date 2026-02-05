@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bpbgq6nlym1pw"]
+
+[ext_resource type="Script" uid="uid://co6dx4k8ovab4" path="res://boombox.gd" id="1_myu36"]
+[ext_resource type="Texture2D" uid="uid://cteec0exuus55" path="res://assets/boombox.png" id="1_xasw4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_myu36"]
+radius = 72.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_vy3e8"]
+font_size = 32
+
+[node name="boombox" type="Area2D" unique_id=911933470]
+script = ExtResource("1_myu36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1537951365]
+position = Vector2(45, -28)
+shape = SubResource("CircleShape2D_myu36")
+
+[node name="Boombox" type="Sprite2D" parent="." unique_id=531571139]
+texture_filter = 1
+position = Vector2(44.999996, -52.499996)
+scale = Vector2(6.6249995, 6.6249995)
+texture = ExtResource("1_xasw4")
+
+[node name="Label" type="Label" parent="." unique_id=491976299]
+offset_left = 2.0
+offset_top = -122.0
+offset_right = 86.0
+offset_bottom = -42.0
+text = "E"
+label_settings = SubResource("LabelSettings_vy3e8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
