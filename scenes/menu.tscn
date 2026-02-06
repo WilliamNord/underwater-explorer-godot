@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dk2nttiyuenok" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_4/2.png" id="4_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://syk8a25ldshg" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_4/3.png" id="4_g3eks"]
 [ext_resource type="Texture2D" uid="uid://noea3jrxjhb4" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_4/4.png" id="6_g3eks"]
+[ext_resource type="Texture2D" uid="uid://b01b4pv74mpgw" path="res://assets/boat_tagged.png" id="7_v86rl"]
 
 [node name="menu" type="Control" unique_id=1031828816]
 layout_mode = 3
@@ -95,16 +96,28 @@ scale = Vector2(2.800926, 2.8009262)
 texture = ExtResource("6_g3eks")
 
 [node name="5" type="Sprite2D" parent="." unique_id=1793445262]
+visible = false
 position = Vector2(804.00006, 1368)
 scale = Vector2(0.70061725, 0.7006174)
 texture = ExtResource("2_vjb58")
 
 [node name="menu_background" type="Sprite2D" parent="." unique_id=1170587011]
+visible = false
 z_index = -10
 position = Vector2(801.4445, 450.5)
 scale = Vector2(0.69405866, 0.6936729)
 texture = ExtResource("2_vjb58")
 metadata/_edit_lock_ = true
+
+[node name="Parallax2D5" type="Parallax2D" parent="." unique_id=230128602]
+scale = Vector2(0.41666666, 0.41666666)
+repeat_size = Vector2(4000, 0)
+autoscroll = Vector2(-30, 0)
+
+[node name="BoatTagged" type="Sprite2D" parent="Parallax2D5" unique_id=454580157]
+position = Vector2(1939.2001, 1774.8)
+scale = Vector2(0.85000104, 0.85000104)
+texture = ExtResource("7_v86rl")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

@@ -5,14 +5,16 @@ var can_interact = false
 
 
 @onready var popup_scene = load("res://scenes/popup.tscn")
+var current_popup = null
 
 func _ready() -> void:
 	label.visible = false
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and can_interact == true:
-		var new_pop_up = popup_scene.instantiate()
-		add_child(new_pop_up)
+		if current_popup == null:
+			current_popup = popup_scene.instantiate()
+			add_child(current_popup)
 	
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -23,4 +25,6 @@ func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		label.visible = false
 		can_interact = false
-		get_node("new_pop_up").queue_free()
+		if current_popup:
+			current_popup.queue_free()
+			current_popup = null
