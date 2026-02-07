@@ -9,7 +9,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wfu58"]
 shader = ExtResource("1_sdrir")
 shader_parameter/inverted = true
-shader_parameter/velocity = 0.1
+shader_parameter/velocity = 0.07
 shader_parameter/speed = 4.0
 shader_parameter/height = 1.0
 shader_parameter/freq = 80.0
@@ -17,7 +17,7 @@ shader_parameter/freq = 80.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s3jda"]
 shader = ExtResource("3_moyw3")
 shader_parameter/inverted = false
-shader_parameter/velocity = 0.1
+shader_parameter/velocity = 0.08
 shader_parameter/speed = 0.1
 shader_parameter/height = 10.0
 shader_parameter/freq = 80.0
