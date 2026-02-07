@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://c4uouwnexabpp"]
 
-[ext_resource type="Script" uid="uid://bji2yfvfwnrtb" path="res://scenes/menu.gd" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://b0qt5pnug1vov" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_4/5.png" id="2_vjb58"]
+[ext_resource type="Script" uid="uid://bji2yfvfwnrtb" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="FontFile" uid="uid://c6u46s2knn7rv" path="res://fonts/bytebounce/ByteBounce.ttf" id="2_v86rl"]
 [ext_resource type="Texture2D" uid="uid://dqvo22i3pjqbv" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_4/1.png" id="3_mhnvy"]
+[ext_resource type="StyleBox" uid="uid://cwyukobfjajvk" path="res://styles/button/button.tres" id="3_mj5lg"]
 [ext_resource type="Texture2D" uid="uid://dk2nttiyuenok" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_4/2.png" id="4_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://syk8a25ldshg" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_4/3.png" id="4_g3eks"]
+[ext_resource type="StyleBox" uid="uid://b6qjf8topqno2" path="res://styles/button/button_pressed.tres" id="4_ufwb2"]
+[ext_resource type="StyleBox" uid="uid://c0a7lx1rapyvp" path="res://styles/button/button_hover.tres" id="5_6cdou"]
 [ext_resource type="Texture2D" uid="uid://noea3jrxjhb4" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_4/4.png" id="6_g3eks"]
 [ext_resource type="Texture2D" uid="uid://b01b4pv74mpgw" path="res://assets/boat_tagged.png" id="7_v86rl"]
+[ext_resource type="PackedScene" uid="uid://vp7aptuo3434" path="res://scenes/godrays.tscn" id="11_mj5lg"]
 
 [node name="menu" type="Control" unique_id=1031828816]
 layout_mode = 3
@@ -16,108 +20,129 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
-metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1316286070]
-z_index = 10
-texture_filter = 1
+[node name="godrays" parent="." unique_id=492442724 instance=ExtResource("11_mj5lg")]
+z_index = -1
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 82.0
-offset_top = -191.0
-offset_right = 206.0
-offset_bottom = -86.974976
-grow_vertical = 0
+offset_left = -1.0
+offset_top = 5.0
+offset_right = -1.0
+offset_bottom = 5.0
 
-[node name="Play" type="Button" parent="VBoxContainer" unique_id=1433913082]
-layout_mode = 2
-text = "Play"
+[node name="background" type="Node" parent="." unique_id=1120740721]
 
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=1952281773]
-layout_mode = 2
-text = "Options"
-
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1253528817]
-layout_mode = 2
-focus_neighbor_bottom = NodePath("../Play")
-text = "Quit
-"
-
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2024065414]
+[node name="Parallax2D" type="Parallax2D" parent="background" unique_id=2024065414]
 z_index = -5
 scroll_offset = Vector2(-55, -49)
 autoscroll = Vector2(10, 0)
 repeat_times = 2
+metadata/_edit_lock_ = true
 
-[node name="1" type="Sprite2D" parent="Parallax2D" unique_id=377129470]
+[node name="1" type="Sprite2D" parent="background/Parallax2D" unique_id=377129470]
 position = Vector2(855.99994, 503.50003)
 scale = Vector2(2.7708333, 2.7746913)
 texture = ExtResource("3_mhnvy")
+metadata/_edit_lock_ = true
 
-[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=792156005]
+[node name="Parallax2D2" type="Parallax2D" parent="background" unique_id=792156005]
 z_index = -4
 scroll_scale = Vector2(0.2, 0.2)
 scroll_offset = Vector2(-55, -51)
 repeat_size = Vector2(1562.4, 0)
 autoscroll = Vector2(4, 0)
 repeat_times = 2
+metadata/_edit_lock_ = true
 
-[node name="2" type="Sprite2D" parent="Parallax2D2" unique_id=663543811]
+[node name="2" type="Sprite2D" parent="background/Parallax2D2" unique_id=663543811]
 z_index = 1
 texture_filter = 1
 position = Vector2(837, 497)
 scale = Vector2(2.7152777, 2.7152774)
 texture = ExtResource("4_4ytvr")
+metadata/_edit_lock_ = true
 
-[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1711642690]
+[node name="Parallax2D3" type="Parallax2D" parent="background" unique_id=1711642690]
 z_index = -3
 scroll_offset = Vector2(-2, -2)
 repeat_size = Vector2(1612.42, 0)
 autoscroll = Vector2(6, 0)
 repeat_times = 5
+metadata/_edit_lock_ = true
 
-[node name="3" type="Sprite2D" parent="Parallax2D3" unique_id=1506785810]
+[node name="3" type="Sprite2D" parent="background/Parallax2D3" unique_id=1506785810]
 z_index = 10
 texture_filter = 1
 position = Vector2(814, 456.00003)
 scale = Vector2(2.8032413, 2.8032405)
 texture = ExtResource("4_g3eks")
+metadata/_edit_lock_ = true
 
-[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=119586668]
+[node name="Parallax2D4" type="Parallax2D" parent="background" unique_id=119586668]
 repeat_size = Vector2(1608.21, 0)
 autoscroll = Vector2(10, 0)
 repeat_times = 5
+metadata/_edit_lock_ = true
 
-[node name="4" type="Sprite2D" parent="Parallax2D4" unique_id=308119026]
+[node name="4" type="Sprite2D" parent="background/Parallax2D4" unique_id=308119026]
 position = Vector2(802, 448)
 scale = Vector2(2.800926, 2.8009262)
 texture = ExtResource("6_g3eks")
-
-[node name="5" type="Sprite2D" parent="." unique_id=1793445262]
-visible = false
-position = Vector2(804.00006, 1368)
-scale = Vector2(0.70061725, 0.7006174)
-texture = ExtResource("2_vjb58")
-
-[node name="menu_background" type="Sprite2D" parent="." unique_id=1170587011]
-visible = false
-z_index = -10
-position = Vector2(801.4445, 450.5)
-scale = Vector2(0.69405866, 0.6936729)
-texture = ExtResource("2_vjb58")
 metadata/_edit_lock_ = true
 
-[node name="Parallax2D5" type="Parallax2D" parent="." unique_id=230128602]
+[node name="Parallax2D5" type="Parallax2D" parent="background" unique_id=230128602]
 scale = Vector2(0.41666666, 0.41666666)
 repeat_size = Vector2(4000, 0)
 autoscroll = Vector2(-30, 0)
+metadata/_edit_lock_ = true
 
-[node name="BoatTagged" type="Sprite2D" parent="Parallax2D5" unique_id=454580157]
+[node name="BoatTagged" type="Sprite2D" parent="background/Parallax2D5" unique_id=454580157]
 position = Vector2(1939.2001, 1774.8)
 scale = Vector2(0.85000104, 0.85000104)
 texture = ExtResource("7_v86rl")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1316286070]
+z_index = 100
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 169.0
+offset_top = -274.0
+offset_right = 366.0
+offset_bottom = -119.974976
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=1433913082]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_v86rl")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_mj5lg")
+theme_override_styles/pressed = ExtResource("4_ufwb2")
+theme_override_styles/hover = ExtResource("5_6cdou")
+text = "Play"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=1952281773]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_v86rl")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_mj5lg")
+theme_override_styles/pressed = ExtResource("4_ufwb2")
+theme_override_styles/hover = ExtResource("5_6cdou")
+text = "Options"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1253528817]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Play")
+theme_override_fonts/font = ExtResource("2_v86rl")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_mj5lg")
+theme_override_styles/pressed = ExtResource("4_ufwb2")
+theme_override_styles/hover = ExtResource("5_6cdou")
+text = "Quit
+"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
