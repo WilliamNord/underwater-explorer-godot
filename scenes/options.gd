@@ -5,7 +5,7 @@ extends Control
 @onready var button_container: VBoxContainer = $button_container
 
 func _ready() -> void:
-	button_container = get_parent().get_node("button_container")
+	#button_container = get_parent().get_node("button_container")
 	button_container.visible = false
 	
 func _on_button_pressed() -> void:

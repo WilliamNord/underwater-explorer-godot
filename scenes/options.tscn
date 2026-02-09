@@ -79,6 +79,7 @@ offset_top = 81.0
 offset_right = 108.5
 offset_bottom = 168.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_yjkok")
 theme_override_font_sizes/font_size = 32
 text = "OPTIONS"
 horizontal_alignment = 1
