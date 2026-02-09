@@ -317,7 +317,7 @@ environment = SubResource("Environment_7r4gi")
 [node name="boat" parent="." unique_id=225920541 instance=ExtResource("10_w7kh3")]
 position = Vector2(5, 475)
 
-[node name="Sprite2D2" type="Sprite2D" parent="boat" unique_id=1860899986]
+[node name="boat_hider" type="Sprite2D" parent="boat" unique_id=1860899986]
 position = Vector2(18, 195.50003)
 scale = Vector2(0.49484372, 0.03437503)
 texture = ExtResource("4_71j4m")

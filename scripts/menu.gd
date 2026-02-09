@@ -1,16 +1,19 @@
 extends Control
 
+@onready var button_container: VBoxContainer = $button_container
 
-@onready var v_box_container: VBoxContainer = $VBoxContainer
+
+var options = load("res://scenes/options.tscn")
 
 func _ready() -> void:
-	v_box_container.grab_focus()
-
+	button_container.grab_focus()
+	
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 func _on_options_pressed() -> void:
-	pass # Replace with function body.
+	var options_menu = options.instantiate()
+	add_child(options_menu)
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

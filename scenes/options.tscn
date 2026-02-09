@@ -1,9 +1,87 @@
 [gd_scene format=3 uid="uid://cm7lmr0hhbcnk"]
 
+[ext_resource type="Script" uid="uid://ckwjenhkbtmoc" path="res://scenes/options.gd" id="1_c2u1v"]
+[ext_resource type="FontFile" uid="uid://c6u46s2knn7rv" path="res://fonts/bytebounce/ByteBounce.ttf" id="2_yjkok"]
+
 [node name="options" type="Control" unique_id=1022791238]
+z_index = 11
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_c2u1v")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=424726265]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5764706)
+
+[node name="Button" type="Button" parent="." unique_id=978421787]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 742.0
+offset_right = 941.0
+offset_bottom = 773.0
+text = "Back
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=850256921]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 202.0
+offset_right = 941.0
+offset_bottom = 535.0
+theme_override_constants/separation = 40
+
+[node name="right" type="Label" parent="VBoxContainer" unique_id=1284401984]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_font_sizes/font_size = 40
+text = "Right: D"
+
+[node name="left" type="Label" parent="VBoxContainer" unique_id=279581004]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_font_sizes/font_size = 40
+text = "Left: A"
+
+[node name="down" type="Label" parent="VBoxContainer" unique_id=15802827]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_font_sizes/font_size = 40
+text = "Downt: S"
+
+[node name="up" type="Label" parent="VBoxContainer" unique_id=1761758004]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_font_sizes/font_size = 40
+text = "Up: w"
+
+[node name="up2" type="Label" parent="VBoxContainer" unique_id=1239872444]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_font_sizes/font_size = 40
+text = "Interact: E"
+
+[node name="options" type="Label" parent="." unique_id=1121007261]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -108.5
+offset_top = 81.0
+offset_right = 108.5
+offset_bottom = 168.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
