@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Underwater explorer godot"
-run/main_scene="uid://s36ch8poy7w6"
+run/main_scene="uid://c4uouwnexabpp"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
