@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://cjkcjlj2gxygx"]
+
+[ext_resource type="StyleBox" uid="uid://cwyukobfjajvk" path="res://styles/button/button.tres" id="2_gxv0h"]
+[ext_resource type="StyleBox" uid="uid://b6qjf8topqno2" path="res://styles/button/button_pressed.tres" id="3_ofmyw"]
+[ext_resource type="StyleBox" uid="uid://c0a7lx1rapyvp" path="res://styles/button/button_hover.tres" id="4_ap2cg"]
+
+[node name="music_popup" type="Control" unique_id=887852268]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -200.0
+offset_right = 175.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=197953631]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=887777603]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.6666565
+offset_top = -10.0
+offset_right = 11.6666565
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192364, 0.422228, 1, 0.9)
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1230979356]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.3333435
+offset_top = 2.0
+offset_right = -2.3333435
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=2030508220]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1384917825]
+layout_mode = 2
+text = " MUSIC PLAYER "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SongLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=965497043]
+layout_mode = 2
+text = "Song Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1135798440]
+layout_mode = 2
+theme_override_constants/separation = 156
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=144202006]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_gxv0h")
+theme_override_styles/pressed = ExtResource("3_ofmyw")
+theme_override_styles/hover = ExtResource("4_ap2cg")
+text = "◀"
+
+[node name="Button2" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=374791978]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_gxv0h")
+theme_override_styles/pressed = ExtResource("3_ofmyw")
+theme_override_styles/hover = ExtResource("4_ap2cg")
+text = "▶"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" unique_id=1320622568]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1037493784]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("2_gxv0h")
+theme_override_styles/pressed = ExtResource("3_ofmyw")
+theme_override_styles/hover = ExtResource("4_ap2cg")
+text = "▶ PLAY"
+
+[node name="CloseButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=248926925]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("2_gxv0h")
+theme_override_styles/pressed = ExtResource("3_ofmyw")
+theme_override_styles/hover = ExtResource("4_ap2cg")
+text = "CLOSE"
