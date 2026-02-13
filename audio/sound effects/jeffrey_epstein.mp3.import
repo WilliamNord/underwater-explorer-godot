@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0x8ovore532n"
+path="res://.godot/imported/jeffrey_epstein.mp3-c09a53d2c1d3aee54c77a73ff9e40440.mp3str"
+
+[deps]
+
+source_file="res://audio/sound effects/jeffrey_epstein.mp3"
+dest_files=["res://.godot/imported/jeffrey_epstein.mp3-c09a53d2c1d3aee54c77a73ff9e40440.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

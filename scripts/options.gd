@@ -15,4 +15,4 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	get_parent().get_node("button_container").visible = true
-	queue_free()
+	self.queue_free()

@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cm7lmr0hhbcnk"]
 
-[ext_resource type="Script" uid="uid://ckwjenhkbtmoc" path="res://scenes/options.gd" id="1_c2u1v"]
+[ext_resource type="Script" uid="uid://ckwjenhkbtmoc" path="res://scripts/options.gd" id="1_1sggn"]
 [ext_resource type="FontFile" uid="uid://c6u46s2knn7rv" path="res://fonts/bytebounce/ByteBounce.ttf" id="2_yjkok"]
+[ext_resource type="StyleBox" uid="uid://cwyukobfjajvk" path="res://styles/button/button.tres" id="3_1sggn"]
+[ext_resource type="StyleBox" uid="uid://b6qjf8topqno2" path="res://styles/button/button_pressed.tres" id="4_e6vpq"]
+[ext_resource type="StyleBox" uid="uid://c0a7lx1rapyvp" path="res://styles/button/button_hover.tres" id="5_o7i7e"]
 
 [node name="options" type="Control" unique_id=1022791238]
 z_index = 11
@@ -11,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_c2u1v")
+script = ExtResource("1_1sggn")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=424726265]
 layout_mode = 1
@@ -21,53 +24,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.5764706)
-
-[node name="Button" type="Button" parent="." unique_id=978421787]
-layout_mode = 0
-offset_left = 608.0
-offset_top = 742.0
-offset_right = 941.0
-offset_bottom = 773.0
-text = "Back
-"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=850256921]
-layout_mode = 0
-offset_left = 608.0
-offset_top = 202.0
-offset_right = 941.0
-offset_bottom = 535.0
-theme_override_constants/separation = 40
-
-[node name="right" type="Label" parent="VBoxContainer" unique_id=1284401984]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yjkok")
-theme_override_font_sizes/font_size = 40
-text = "Right: D"
-
-[node name="left" type="Label" parent="VBoxContainer" unique_id=279581004]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yjkok")
-theme_override_font_sizes/font_size = 40
-text = "Left: A"
-
-[node name="down" type="Label" parent="VBoxContainer" unique_id=15802827]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yjkok")
-theme_override_font_sizes/font_size = 40
-text = "Downt: S"
-
-[node name="up" type="Label" parent="VBoxContainer" unique_id=1761758004]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yjkok")
-theme_override_font_sizes/font_size = 40
-text = "Up: w"
-
-[node name="up2" type="Label" parent="VBoxContainer" unique_id=1239872444]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yjkok")
-theme_override_font_sizes/font_size = 40
-text = "Interact: E"
 
 [node name="options" type="Label" parent="." unique_id=1121007261]
 layout_mode = 1
@@ -85,4 +41,61 @@ text = "OPTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=850256921]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 202.0
+offset_right = 816.0
+offset_bottom = 602.0
+theme_override_constants/separation = 65
+alignment = 1
+
+[node name="right" type="Label" parent="VBoxContainer" unique_id=1284401984]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_font_sizes/font_size = 40
+text = "Right: D"
+
+[node name="left" type="Label" parent="VBoxContainer" unique_id=279581004]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_font_sizes/font_size = 40
+text = "Left: A"
+
+[node name="down" type="Label" parent="VBoxContainer" unique_id=15802827]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_font_sizes/font_size = 40
+text = "Downt: S"
+
+[node name="up" type="Label" parent="VBoxContainer" unique_id=1761758004]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_font_sizes/font_size = 40
+text = "Up: w"
+
+[node name="interact" type="Label" parent="VBoxContainer" unique_id=1239872444]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_font_sizes/font_size = 40
+text = "Interact: E"
+
+[node name="back" type="Button" parent="." unique_id=978421787]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 742.0
+offset_right = 941.0
+offset_bottom = 773.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_1sggn")
+theme_override_styles/pressed = ExtResource("4_e6vpq")
+theme_override_styles/hover = ExtResource("5_o7i7e")
+text = "Back
+"
+
+[connection signal="pressed" from="back" to="." method="_on_button_pressed"]

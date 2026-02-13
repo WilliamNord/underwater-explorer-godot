@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfothkdyl72kx" path="res://scripts/boombox.gd" id="1_cafhp"]
 [ext_resource type="Texture2D" uid="uid://cteec0exuus55" path="res://assets/boombox.png" id="1_xasw4"]
-[ext_resource type="AudioStream" uid="uid://b63adcuwn7wjk" path="res://audio/geoffharvey-tropical-coconut-island-367671.mp3" id="3_f65wk"]
+[ext_resource type="AudioStream" uid="uid://b63adcuwn7wjk" path="res://audio/music/geoffharvey-tropical-coconut-island-367671.mp3" id="3_f65wk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_myu36"]
 radius = 72.0
