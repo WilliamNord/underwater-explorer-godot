@@ -18,7 +18,7 @@ var is_swimming = false
 @onready var bubbles: GPUParticles2D = $bubbles
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
-const WATER_SPLASH = preload("res://audio/water_splash.mp3")
+const WATER_SPLASH = preload("res://audio/sound effects/water_splash.mp3")
 
 @onready var shadow_light: PointLight2D = $shadow_light
 @onready var sprite_light: PointLight2D = $sprite_light
