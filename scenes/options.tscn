@@ -87,11 +87,12 @@ text = "Interact: E"
 
 [node name="back" type="Button" parent="." unique_id=978421787]
 layout_mode = 0
-offset_left = 608.0
-offset_top = 742.0
-offset_right = 941.0
-offset_bottom = 773.0
-theme_override_font_sizes/font_size = 32
+offset_left = 558.02136
+offset_top = 729.0
+offset_right = 990.97876
+offset_bottom = 786.0
+theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = ExtResource("3_1sggn")
 theme_override_styles/pressed = ExtResource("4_e6vpq")
 theme_override_styles/hover = ExtResource("5_o7i7e")
