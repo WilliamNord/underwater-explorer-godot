@@ -19,7 +19,7 @@ Dette er en liten demonstrasjon av spillet som det er i dette punktet i prosjekt
 
 ## Teknologi
 
-- **Spillmotor:** Godot 4.4.1
+- **Spillmotor:** Godot 4.6
 - **Grafikk:** Aseprite  
 - **Språk:** GDScript
 
@@ -40,6 +40,7 @@ res://
 ## Installasjon
 Hvis du har lyst til å bare teste spillet så enkelt som mulig, kan du laste ned demo-releases her: 
 https://github.com/WilliamNord/underwater-explorer-godot/releases
+.exe filer er for Windows og filer uten er for Mac
 
 Hvis du heller har lyst på den nyeste av de nyeste versjonene og tilgang til alle filer, kan du følge denne guiden under:
 
