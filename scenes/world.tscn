@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dkjftlygo8ere" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_1/1.png" id="11_e3hyu"]
 [ext_resource type="Texture2D" uid="uid://bkoub7cu4ecfp" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_3/3.png" id="12_q5onr"]
 [ext_resource type="Texture2D" uid="uid://4mjp7sv7k362" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_3/4.png" id="13_jhx03"]
+[ext_resource type="Script" uid="uid://cqdvwnue3lcuj" path="res://scripts/BoundsComponent.gd" id="14_o8fc1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_71j4m"]
 
@@ -268,8 +269,8 @@ wave_height = 90
 [node name="Ocean_background" type="Sprite2D" parent="Ocean" unique_id=2006219413]
 z_index = -10
 texture_filter = 6
-position = Vector2(-491.996, 1282)
-scale = Vector2(4.22125, 2.13125)
+position = Vector2(-488.99805, 1282.3888)
+scale = Vector2(4.2249975, 2.1307638)
 texture = ExtResource("4_71j4m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ocean" unique_id=711949873]
@@ -288,6 +289,11 @@ offset_right = 2103.0
 offset_bottom = 583.2223
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="BoundsComponent" type="Node" parent="Ocean" unique_id=972341816]
+unique_name_in_owner = true
+script = ExtResource("14_o8fc1")
+metadata/_custom_type_script = "uid://cqdvwnue3lcuj"
 
 [node name="sun" type="PointLight2D" parent="." unique_id=1754085916]
 position = Vector2(69, -69)

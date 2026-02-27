@@ -23,9 +23,23 @@ const WATER_SPLASH = preload("res://audio/sound effects/water_splash.mp3")
 @onready var shadow_light: PointLight2D = $shadow_light
 @onready var sprite_light: PointLight2D = $sprite_light
 
+@onready var camera: Camera2D = $Camera2D
 
-func _ready() -> void:
+var ocean_rect: Rect2
+
+func _ready():
 	add_to_group("player")
+
+#en funksjon for å stoppe kameraet fra å gå ut av verden
+#dinne limitene er dynamiske og endrer seg automatisk med havet og størrelsen
+#kobles sammen av World_setup.gd 
+func _on_bounds_ready(rect: Rect2):
+	ocean_rect = rect
+	camera.limit_left   = rect.position.x
+	#camera.limit_top    = rect.position.y
+	camera.limit_right  = rect.end.x
+	camera.limit_bottom = rect.end.y
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -33,6 +47,10 @@ func _physics_process(delta: float) -> void:
 		handle_swimming(delta)
 	else:
 		handle_land_movement(delta)
+	
+	if ocean_rect != Rect2():
+		position.x = clamp(position.x, ocean_rect.position.x, ocean_rect.end.x)
+		position.y = clamp(position.y, position.y, ocean_rect.end.y)
 	
 	move_and_slide()
 	
@@ -57,7 +75,8 @@ func handle_land_movement(delta: float) -> void:
 	# gravitasjon
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+		
+	#hopping
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 

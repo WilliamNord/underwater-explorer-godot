@@ -7,7 +7,12 @@ extends Node2D
 func _ready() -> void:
 	darkness_light.enabled = true
 	sun.enabled = true
-
+	
+	var bounds_component = $Ocean/BoundsComponent
+	var player = $player
+	
+	#kobler signal from bounds_component til spiller sin _on_bounds_ready()
+	bounds_component.bounds_ready.connect(player._on_bounds_ready)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
