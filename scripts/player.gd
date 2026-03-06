@@ -10,6 +10,11 @@ extends CharacterBody2D
 @export var SWIM_MAX_SPEED = 500.0
 @export var SWIM_FRICTION = 250.0
 
+#signaler
+signal entered_water
+signal exited_water
+
+
 var acceleration := 2.5
 var last_direction: float
 
@@ -19,6 +24,7 @@ var is_swimming = false
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 const WATER_SPLASH = preload("res://audio/sound effects/water_splash.mp3")
+ 
 
 @onready var shadow_light: PointLight2D = $shadow_light
 @onready var sprite_light: PointLight2D = $sprite_light
@@ -133,13 +139,17 @@ func in_water_gravity():
 	
 	shadow_light.enabled = true
 	sprite_light.enabled = true
-		
+	
+	entered_water.emit()
+	
 func out_water_gravity():
 	print("player out of water")
 	is_swimming = false 
 	
 	shadow_light.enabled = false
 	sprite_light.enabled = false
+	
+	exited_water.emit()
 
 #funksjon for akselerasjon og endring av retning
 func calculate_speed(direction: float) -> void:

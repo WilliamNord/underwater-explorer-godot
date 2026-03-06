@@ -307,13 +307,6 @@ position = Vector2(565, -236)
 color = Color(0, 0, 0, 1)
 blend_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=649644647]
-visible = false
-offset_left = 1444.0
-offset_top = 1109.0
-offset_right = 2960.0
-offset_bottom = 1746.0
-
 [node name="item" parent="." unique_id=89234546 instance=ExtResource("9_w7kh3")]
 position = Vector2(461, 2363)
 

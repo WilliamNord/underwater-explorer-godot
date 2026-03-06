@@ -15,6 +15,7 @@ var popup: MusicPopup = null
 
 
 func _ready() -> void:
+	audio_player.add_to_group("music_players")
 	load_songs()
 	
 	if songs.size() > 0:

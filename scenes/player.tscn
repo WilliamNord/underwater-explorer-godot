@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://20wfh8i1od2v" path="res://assets/light_textures/light.png" id="5_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://ddo3opktak1nh" path="res://assets/light_textures/FREE Textures Of Light/512x512/512x512 textures (71).png" id="6_fjrip"]
 [ext_resource type="Texture2D" uid="uid://c3lm3rqsrn5s1" path="res://assets/tilemap_retouched.png" id="7_fjrip"]
+[ext_resource type="Script" uid="uid://bybackjv36kd3" path="res://scripts/UnderwaterAudioComponent.gd" id="7_smehm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(104, 100)
@@ -62,7 +63,7 @@ zoom = Vector2(0.7, 0.7)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2125004050]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2125004050 groups=["music_player"]]
 volume_db = 9.455
 pitch_scale = 1.3
 
@@ -89,3 +90,7 @@ z_index = -1
 scale = Vector2(7, 7)
 tile_map_data = PackedByteArray("AAAAAP//AAAFAAYAAAD/////AAAGAAUAAAD+////AAAFAAYAAAD//wAAAAAGAAUAAAAAAAAAAAAFAAYAAAABAAAAAAAGAAUAAAACAAAAAAAFAAYAAAACAP//AAAFAAYAAAABAP//AAAGAAUAAAABAP7/AAAFAAYAAAAAAP7/AAAFAAYAAAD///7/AAAFAAYAAAD//wEAAAAGAAUAAAAAAAEAAAAFAAYAAAABAAEAAAAGAAUAAAACAAEAAAAFAAYAAAADAAAAAAAFAAYAAAD+/wEAAAAFAAYAAAADAP7/AAAFAAYAAAAAAP3/AAAFAAYAAAABAPz/AAAFAAYAAAAAAAIAAAAFAAYAAAADAP//AAAGAAUAAAD+/wIAAAAFAAYAAAD8/wIAAAAFAAYAAAD9/wEAAAAGAAUAAAD8/wAAAAAFAAYAAAD9////AAAGAAUAAAD+/wAAAAAFAAYAAAABAP3/AAAFAAYAAAD8/wEAAAAFAAYAAAD9/wAAAAAGAAUAAAABAAIAAAAFAAYAAAD//wIAAAAFAAYAAAD9/wIAAAAFAAYAAAD7/wAAAAAFAAYAAAD7////AAAFAAYAAAD7//7/AAAFAAYAAAD8//3/AAAFAAYAAAD8//z/AAAFAAYAAAD9//z/AAAFAAYAAAD9//3/AAAFAAYAAAD9//7/AAAFAAYAAAD8//7/AAAFAAYAAAD8////AAAFAAYAAAD+//3/AAAFAAYAAAD///3/AAAFAAYAAAACAP3/AAAFAAYAAAACAP7/AAAFAAYAAAD+//7/AAAFAAYAAAADAP3/AAAFAAYAAAAEAP7/AAAFAAYAAAAEAP//AAAFAAYAAAAEAAAAAAAFAAYAAAADAAEAAAAFAAYAAAADAAIAAAAFAAYAAAACAAIAAAAFAAYAAAAEAAIAAAAFAAYAAAAEAAEAAAAFAAYAAAAEAP3/AAAFAAYAAAAEAPz/AAAFAAYAAAADAPz/AAAFAAYAAAACAPz/AAAFAAYAAAAAAPz/AAAFAAYAAAD///z/AAAFAAYAAAD+//z/AAAFAAYAAAA=")
 tile_set = SubResource("TileSet_ur7pv")
+
+[node name="UnderwaterAudioComponent" type="Node" parent="." unique_id=461823475]
+script = ExtResource("7_smehm")
+metadata/_custom_type_script = "uid://bybackjv36kd3"
