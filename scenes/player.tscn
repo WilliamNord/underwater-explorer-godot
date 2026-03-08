@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ddo3opktak1nh" path="res://assets/light_textures/FREE Textures Of Light/512x512/512x512 textures (71).png" id="6_fjrip"]
 [ext_resource type="Texture2D" uid="uid://c3lm3rqsrn5s1" path="res://assets/tilemap_retouched.png" id="7_fjrip"]
 [ext_resource type="Script" uid="uid://bybackjv36kd3" path="res://scripts/UnderwaterAudioComponent.gd" id="7_smehm"]
+[ext_resource type="Texture2D" uid="uid://8dg2l0pxa5xh" path="res://assets/character/character_swim-Sheet.png" id="8_smehm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(104, 100)
@@ -47,11 +48,104 @@ texture = ExtResource("7_fjrip")
 [sub_resource type="TileSet" id="TileSet_ur7pv"]
 sources/0 = SubResource("TileSetAtlasSource_smehm")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("8_smehm")
+region = Rect2(0, 0, 20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("8_smehm")
+region = Rect2(20, 0, 20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("8_smehm")
+region = Rect2(40, 0, 20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("8_smehm")
+region = Rect2(60, 0, 20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("8_smehm")
+region = Rect2(80, 0, 20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("8_smehm")
+region = Rect2(100, 0, 20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
+atlas = ExtResource("8_smehm")
+region = Rect2(120, 0, 20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
+atlas = ExtResource("8_smehm")
+region = Rect2(140, 0, 20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
+atlas = ExtResource("8_smehm")
+region = Rect2(160, 0, 20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
+atlas = ExtResource("8_smehm")
+region = Rect2(180, 0, 20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
+atlas = ExtResource("8_smehm")
+region = Rect2(200, 0, 20, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
+atlas = ExtResource("8_smehm")
+region = Rect2(220, 0, 20, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_60mlk"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ej7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oprun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8ls1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfm1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fulsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r5pv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="player" type="CharacterBody2D" unique_id=216172539]
 light_mask = 3
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=418058792]
+visible = false
 light_mask = 3
 texture = ExtResource("1_4flbx")
 
@@ -94,3 +188,10 @@ tile_set = SubResource("TileSet_ur7pv")
 [node name="UnderwaterAudioComponent" type="Node" parent="." unique_id=461823475]
 script = ExtResource("7_smehm")
 metadata/_custom_type_script = "uid://bybackjv36kd3"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=417899840]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_60mlk")
+animation = &"walk"
+frame_progress = 0.9109228
