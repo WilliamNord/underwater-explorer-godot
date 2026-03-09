@@ -48,6 +48,10 @@ texture = ExtResource("7_fjrip")
 [sub_resource type="TileSet" id="TileSet_ur7pv"]
 sources/0 = SubResource("TileSetAtlasSource_smehm")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
+atlas = ExtResource("8_smehm")
+region = Rect2(120, 0, 20, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("8_smehm")
 region = Rect2(0, 0, 20, 48)
@@ -99,7 +103,15 @@ region = Rect2(220, 0, 20, 48)
 [sub_resource type="SpriteFrames" id="SpriteFrames_60mlk"]
 animations = [{
 "frames": [{
-"duration": 2.0,
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60mlk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_smehm")
 }, {
 "duration": 1.0,
@@ -137,7 +149,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=216172539]
@@ -193,5 +205,4 @@ metadata/_custom_type_script = "uid://bybackjv36kd3"
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_60mlk")
-animation = &"walk"
-frame_progress = 0.9109228
+animation = &"idle"
