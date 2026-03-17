@@ -14,24 +14,32 @@ extends CharacterBody2D
 signal entered_water
 signal exited_water
 
-
+#akselerasjon
 var acceleration := 2.5
 var last_direction: float
 
+#variabel
 var is_swimming = false
+
+#state
+var state = "idle"
 
 @onready var bubbles: GPUParticles2D = $bubbles
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 const WATER_SPLASH = preload("res://audio/sound effects/water_splash.mp3")
  
-
 @onready var shadow_light: PointLight2D = $shadow_light
 @onready var sprite_light: PointLight2D = $sprite_light
 
 @onready var camera: Camera2D = $Camera2D
 
 var ocean_rect: Rect2
+
+#player sprite
+@onready var body_animation: AnimatedSprite2D = $player
+#arm sprite
+@onready var arm_animation: AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	add_to_group("player")
@@ -59,14 +67,45 @@ func _physics_process(delta: float) -> void:
 		position.y = clamp(position.y, position.y, ocean_rect.end.y)
 	
 	move_and_slide()
-	
+
+
+func update_animations():
+	if state == "idle":
+		if body_animation.animation != "idle":
+			body_animation.play("idle")
+			arm_animation.play("idle")
+
+	elif state == "walk":
+		if body_animation.animation != "walk":
+			body_animation.play("walk")
+			arm_animation.play("walk")
+
+	elif state == "jump":
+		if body_animation.animation != "jump":
+			body_animation.play("jump")
+			arm_animation.play("jump")
+
+	elif state == "swim":
+		if body_animation.animation != "swim":
+			body_animation.play("swim")
+			arm_animation.play("swim")
+
 func handle_swimming(delta: float) -> void:
 	var input_x = Input.get_axis("ui_left", "ui_right")
 	var input_y = Input.get_axis("ui_up", "ui_down")
+	
+	# Roter spriten 90 grader så karakteren ligger horisontalt
+	body_animation.rotation_degrees = lerp_angle(
+		body_animation.rotation_degrees,
+		-90.0,
+		10.0 * delta
+	)
 
 	# hvis det er input, aksellerer i den retningen * SWIM_MAX_SPEED
 	if input_x != 0:
 		velocity.x = move_toward(velocity.x, input_x * SWIM_MAX_SPEED, SWIM_ACCELERATION * delta)
+		body_animation.flip_h = input_x < 0
+		body_animation.play("walk")
 	else:
 		# friksjon når ingen input
 		velocity.x = move_toward(velocity.x, 0, SWIM_FRICTION * delta)
@@ -76,57 +115,36 @@ func handle_swimming(delta: float) -> void:
 	else:
 		# friksjon når ingen input
 		velocity.y = move_toward(velocity.y, 0, SWIM_FRICTION * delta)
-		
+
 func handle_land_movement(delta: float) -> void:
+		
+	body_animation.rotation_degrees = lerp_angle(
+		body_animation.rotation_degrees,
+		0.0,
+		10.0 * delta
+	)
+
 	# gravitasjon
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-	#hopping
+
+	# hopping
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# horisontal bevegelse
 	var direction := Input.get_axis("ui_left", "ui_right")
+
 	if direction:
 		velocity.x = direction * SPEED
+		body_animation.flip_h = direction < 0
+		state = "walk"
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
-	#if is_swimming:
-		#velocity.y = move_toward(velocity.y, 0, 400 * delta)
-		#velocity.x = move_toward(velocity.x, 0, 400 * delta)
-	#else:
-		#if not is_on_floor():
-			#velocity += get_gravity() * delta
-#
-	## Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
-#
-	#var direction := Input.get_axis("ui_left", "ui_right")
-	#if direction:
-		#velocity.x = direction * SPEED
-	#elif is_swimming:
-		#pass
-	#else:
-		#if not is_swimming:
-			#velocity.x = move_toward(velocity.x, 0, SPEED)
-#
-		#
-	#if is_swimming:
-		#if Input.is_action_pressed("ui_up"):
-			#velocity.y = -200 
-		#elif Input.is_action_pressed("ui_down"):
-			#velocity.y = 200 
-		#elif Input.is_action_pressed("ui_right"):
-			#velocity.x = 200 
-		#elif Input.is_action_pressed("ui_left"):
-			#velocity.x = -200
-	#
-	#if is_swimming:
-		#velocity.x = clamp(velocity.x, -200, 200)
+		state = "idle"
 
+	if not is_on_floor():
+		state = "jump"
 
 func in_water_gravity():
 	print("player in water")

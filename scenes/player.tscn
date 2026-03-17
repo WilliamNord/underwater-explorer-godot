@@ -1,52 +1,25 @@
-[gd_scene format=4 uid="uid://dh40ftd6ea0y1"]
+[gd_scene format=3 uid="uid://dh40ftd6ea0y1"]
 
 [ext_resource type="Texture2D" uid="uid://c161qaq21cn6l" path="res://assets/icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://c86ib7t2ltqpo" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://d2lvufqnpg7u4" path="res://scenes/bubbles.tscn" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://20wfh8i1od2v" path="res://assets/light_textures/light.png" id="5_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://ddo3opktak1nh" path="res://assets/light_textures/FREE Textures Of Light/512x512/512x512 textures (71).png" id="6_fjrip"]
-[ext_resource type="Texture2D" uid="uid://c3lm3rqsrn5s1" path="res://assets/tilemap_retouched.png" id="7_fjrip"]
 [ext_resource type="Script" uid="uid://bybackjv36kd3" path="res://scripts/UnderwaterAudioComponent.gd" id="7_smehm"]
 [ext_resource type="Texture2D" uid="uid://8dg2l0pxa5xh" path="res://assets/character/character_swim-Sheet.png" id="8_smehm"]
+[ext_resource type="Texture2D" uid="uid://i51ng54tcqjq" path="res://assets/character/arm.png" id="8_ur7pv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(104, 100)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ur7pv"]
+radius = 24.0
+height = 142.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_smehm"]
-texture = ExtResource("7_fjrip")
-0:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-0:2/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-0:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
+atlas = ExtResource("8_ur7pv")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="TileSet" id="TileSet_ur7pv"]
-sources/0 = SubResource("TileSetAtlasSource_smehm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_a38lo"]
+atlas = ExtResource("8_ur7pv")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
 atlas = ExtResource("8_smehm")
@@ -104,6 +77,17 @@ region = Rect2(220, 0, 20, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_i4ail")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a38lo")
+}],
+"loop": true,
+"name": &"arm",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_60mlk")
 }],
 "loop": true,
@@ -152,6 +136,68 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="Animation" id="Animation_smehm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ur7pv"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.17453292519943295, 0.2617993877991494, -0.17453292519943295]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4r1p"]
+_data = {
+&"RESET": SubResource("Animation_smehm"),
+&"walk": SubResource("Animation_ur7pv")
+}
+
 [node name="player" type="CharacterBody2D" unique_id=216172539]
 light_mask = 3
 script = ExtResource("1_onrkg")
@@ -162,7 +208,7 @@ light_mask = 3
 texture = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=897398506]
-shape = SubResource("RectangleShape2D_onrkg")
+shape = SubResource("CapsuleShape2D_ur7pv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1837199989]
 zoom = Vector2(0.7, 0.7)
@@ -190,19 +236,26 @@ enabled = false
 color = Color(1, 1, 0.741176, 1)
 texture = ExtResource("6_fjrip")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1791036076]
-visible = false
-z_index = -1
-scale = Vector2(7, 7)
-tile_map_data = PackedByteArray("AAAAAP//AAAFAAYAAAD/////AAAGAAUAAAD+////AAAFAAYAAAD//wAAAAAGAAUAAAAAAAAAAAAFAAYAAAABAAAAAAAGAAUAAAACAAAAAAAFAAYAAAACAP//AAAFAAYAAAABAP//AAAGAAUAAAABAP7/AAAFAAYAAAAAAP7/AAAFAAYAAAD///7/AAAFAAYAAAD//wEAAAAGAAUAAAAAAAEAAAAFAAYAAAABAAEAAAAGAAUAAAACAAEAAAAFAAYAAAADAAAAAAAFAAYAAAD+/wEAAAAFAAYAAAADAP7/AAAFAAYAAAAAAP3/AAAFAAYAAAABAPz/AAAFAAYAAAAAAAIAAAAFAAYAAAADAP//AAAGAAUAAAD+/wIAAAAFAAYAAAD8/wIAAAAFAAYAAAD9/wEAAAAGAAUAAAD8/wAAAAAFAAYAAAD9////AAAGAAUAAAD+/wAAAAAFAAYAAAABAP3/AAAFAAYAAAD8/wEAAAAFAAYAAAD9/wAAAAAGAAUAAAABAAIAAAAFAAYAAAD//wIAAAAFAAYAAAD9/wIAAAAFAAYAAAD7/wAAAAAFAAYAAAD7////AAAFAAYAAAD7//7/AAAFAAYAAAD8//3/AAAFAAYAAAD8//z/AAAFAAYAAAD9//z/AAAFAAYAAAD9//3/AAAFAAYAAAD9//7/AAAFAAYAAAD8//7/AAAFAAYAAAD8////AAAFAAYAAAD+//3/AAAFAAYAAAD///3/AAAFAAYAAAACAP3/AAAFAAYAAAACAP7/AAAFAAYAAAD+//7/AAAFAAYAAAADAP3/AAAFAAYAAAAEAP7/AAAFAAYAAAAEAP//AAAFAAYAAAAEAAAAAAAFAAYAAAADAAEAAAAFAAYAAAADAAIAAAAFAAYAAAACAAIAAAAFAAYAAAAEAAIAAAAFAAYAAAAEAAEAAAAFAAYAAAAEAP3/AAAFAAYAAAAEAPz/AAAFAAYAAAADAPz/AAAFAAYAAAACAPz/AAAFAAYAAAAAAPz/AAAFAAYAAAD///z/AAAFAAYAAAD+//z/AAAFAAYAAAA=")
-tile_set = SubResource("TileSet_ur7pv")
-
 [node name="UnderwaterAudioComponent" type="Node" parent="." unique_id=461823475]
 script = ExtResource("7_smehm")
 metadata/_custom_type_script = "uid://bybackjv36kd3"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=417899840]
+[node name="player" type="AnimatedSprite2D" parent="." unique_id=417899840]
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_60mlk")
-animation = &"idle"
+animation = &"walk"
+frame = 6
+frame_progress = 0.89574915
+
+[node name="arm" type="Sprite2D" parent="." unique_id=503684536]
+texture_filter = 1
+position = Vector2(1, -21)
+scale = Vector2(3.0390625, 3.0390625)
+texture = ExtResource("8_ur7pv")
+offset = Vector2(-0.32904816, 5.922879)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=139129379]
+libraries/ = SubResource("AnimationLibrary_y4r1p")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=751644789]
