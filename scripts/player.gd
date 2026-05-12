@@ -43,6 +43,9 @@ var ocean_rect: Rect2
 @onready var arm: Sprite2D = $player/arm
 @onready var animation_player_arm: AnimationPlayer = $player/arm/AnimationPlayerArm
 
+#collision shape
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+
 func _ready():
 	add_to_group("player")
 
@@ -84,7 +87,7 @@ func handle_swimming(delta: float) -> void:
 			target_angle + PI / 2,
 			delta * 10.0
 			)
-	
+			
 	arm.rotation = body_animation.rotation
 
 	if input_x != 0:

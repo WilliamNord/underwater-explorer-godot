@@ -286,6 +286,7 @@ texture = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=897398506]
 shape = SubResource("CapsuleShape2D_ur7pv")
+debug_color = Color(0.31066668, 1, 0.060000002, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1837199989]
 zoom = Vector2(0.7, 0.7)
