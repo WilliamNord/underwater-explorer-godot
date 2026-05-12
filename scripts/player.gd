@@ -84,13 +84,20 @@ func handle_swimming(delta: float) -> void:
 			target_angle + PI / 2,
 			delta * 10.0
 			)
+	
+	arm.rotation = body_animation.rotation
 
 	if input_x != 0:
 		velocity.x = move_toward(velocity.x, input_x * SWIM_MAX_SPEED, SWIM_ACCELERATION * delta)
 		body_animation.flip_h = input_x < 0
 		body_animation.play("walk")
-		arm.flip_h = input_x < 0
-		animation_player_arm.play("swim")
+		
+		if input_x > 0:
+			animation_player_arm.play("swim_right")
+		elif input_x < 0:
+			animation_player_arm.play("swim_left")
+		else:
+			animation_player_arm.play("idle")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SWIM_FRICTION * delta)
 
