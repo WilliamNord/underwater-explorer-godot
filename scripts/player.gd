@@ -38,8 +38,10 @@ var ocean_rect: Rect2
 
 #player sprite
 @onready var body_animation: AnimatedSprite2D = $player
-#arm sprite
-@onready var arm_animation: AnimationPlayer = $AnimationPlayer
+
+#arm sprite & animasjon
+@onready var arm: Sprite2D = $player/arm
+@onready var animation_player_arm: AnimationPlayer = $player/arm/AnimationPlayerArm
 
 func _ready():
 	add_to_group("player")
@@ -69,51 +71,32 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func update_animations():
-	if state == "idle":
-		if body_animation.animation != "idle":
-			body_animation.play("idle")
-			arm_animation.play("idle")
-
-	elif state == "walk":
-		if body_animation.animation != "walk":
-			body_animation.play("walk")
-			arm_animation.play("walk")
-
-	elif state == "jump":
-		if body_animation.animation != "jump":
-			body_animation.play("jump")
-			arm_animation.play("jump")
-
-	elif state == "swim":
-		if body_animation.animation != "swim":
-			body_animation.play("swim")
-			arm_animation.play("swim")
-
 func handle_swimming(delta: float) -> void:
 	var input_x = Input.get_axis("ui_left", "ui_right")
 	var input_y = Input.get_axis("ui_up", "ui_down")
-	
-	# Roter spriten 90 grader så karakteren ligger horisontalt
-	body_animation.rotation_degrees = lerp_angle(
-		body_animation.rotation_degrees,
-		-90.0,
-		10.0 * delta
-	)
+	var input = Vector2(input_x, input_y)
 
-	# hvis det er input, aksellerer i den retningen * SWIM_MAX_SPEED
+	if input.length() > 0.05:
+		var target_angle = input.angle()
+		# Justér offset om karakteren peker mot høyre fra start
+		body_animation.rotation = lerp_angle(
+			body_animation.rotation,
+			target_angle + PI / 2,
+			delta * 10.0
+			)
+
 	if input_x != 0:
 		velocity.x = move_toward(velocity.x, input_x * SWIM_MAX_SPEED, SWIM_ACCELERATION * delta)
 		body_animation.flip_h = input_x < 0
 		body_animation.play("walk")
+		arm.flip_h = input_x < 0
+		animation_player_arm.play("swim")
 	else:
-		# friksjon når ingen input
 		velocity.x = move_toward(velocity.x, 0, SWIM_FRICTION * delta)
-	
+
 	if input_y != 0:
 		velocity.y = move_toward(velocity.y, input_y * SWIM_MAX_SPEED, SWIM_ACCELERATION * delta)
 	else:
-		# friksjon når ingen input
 		velocity.y = move_toward(velocity.y, 0, SWIM_FRICTION * delta)
 
 func handle_land_movement(delta: float) -> void:

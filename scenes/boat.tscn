@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bdyi55eclu10o"]
 
-[ext_resource type="Texture2D" uid="uid://b01b4pv74mpgw" path="res://assets/boat_tagged.png" id="1_0063d"]
+[ext_resource type="Texture2D" uid="uid://dcawhqujon2kr" path="res://assets/boat_normal.png" id="1_qyrje"]
 [ext_resource type="PackedScene" uid="uid://b7nfqavbashqo" path="res://scenes/boombox.tscn" id="2_qyrje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0063d"]
@@ -17,8 +17,10 @@ shape = SubResource("RectangleShape2D_0063d")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=916895674]
 texture_filter = 1
+position = Vector2(568, 75)
 scale = Vector2(8.958333, 8.958333)
-texture = ExtResource("1_0063d")
+texture = ExtResource("1_qyrje")
+offset = Vector2(-63.404655, -8.372093)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=265472713]
 position = Vector2(-198.8753, -45.104046)
