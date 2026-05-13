@@ -320,15 +320,14 @@ metadata/_custom_type_script = "uid://bybackjv36kd3"
 
 [node name="player" type="AnimatedSprite2D" parent="." unique_id=417899840]
 texture_filter = 1
-position = Vector2(1, -21)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_60mlk")
 animation = &"walk"
-offset = Vector2(-0.33333334, 7)
 
 [node name="arm" type="Sprite2D" parent="player" unique_id=503684536]
 z_index = 1
 texture_filter = 1
+position = Vector2(0.33333397, -6.999998)
 scale = Vector2(1.0130209, 1.0130209)
 texture = ExtResource("8_ur7pv")
 offset = Vector2(-0.32904816, 5.922879)

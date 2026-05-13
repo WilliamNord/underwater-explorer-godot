@@ -79,16 +79,16 @@ func handle_swimming(delta: float) -> void:
 	var input_y = Input.get_axis("ui_up", "ui_down")
 	var input = Vector2(input_x, input_y)
 
+	var target_angle = input.angle()
+
+	#roterer spilleren og collisionshape til retningen
 	if input.length() > 0.05:
-		var target_angle = input.angle()
-		# Justér offset om karakteren peker mot høyre fra start
-		body_animation.rotation = lerp_angle(
-			body_animation.rotation,
-			target_angle + PI / 2,
-			delta * 10.0
-			)
-			
-	arm.rotation = body_animation.rotation
+		rotate_player(delta, body_animation, target_angle + PI / 2, 10.0)
+		rotate_player(delta, collision_shape, target_angle + PI / 2, 10.0)
+	else:
+		rotate_player(delta, body_animation, 0.0, 1.0)
+		rotate_player(delta, collision_shape, 0.0, 1.0)
+		
 
 	if input_x != 0:
 		velocity.x = move_toward(velocity.x, input_x * SWIM_MAX_SPEED, SWIM_ACCELERATION * delta)
@@ -138,6 +138,13 @@ func handle_land_movement(delta: float) -> void:
 
 	if not is_on_floor():
 		state = "jump"
+
+func rotate_player(delta: float, part, target, speed):
+	part.rotation = lerp_angle(
+		part.rotation,
+		target,
+		delta * speed
+	)
 
 func in_water_gravity():
 	print("player in water")
