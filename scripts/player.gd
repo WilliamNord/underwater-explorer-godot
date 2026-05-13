@@ -83,8 +83,8 @@ func handle_swimming(delta: float) -> void:
 
 	#roterer spilleren og collisionshape til retningen
 	if input.length() > 0.05:
-		rotate_player(delta, body_animation, target_angle + PI / 2, 10.0)
-		rotate_player(delta, collision_shape, target_angle + PI / 2, 10.0)
+		rotate_player(delta, body_animation, target_angle + PI / 2, 5.0)
+		rotate_player(delta, collision_shape, target_angle + PI / 2, 5.0)
 	else:
 		rotate_player(delta, body_animation, 0.0, 1.0)
 		rotate_player(delta, collision_shape, 0.0, 1.0)

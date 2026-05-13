@@ -261,6 +261,18 @@ position = Vector2(489, 1062)
 scale = Vector2(1, 1.08)
 script = ExtResource("4_k0juu")
 
+[node name="godrays" parent="Ocean" unique_id=341587550 instance=ExtResource("9_7r4gi")]
+z_index = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -3979.0
+offset_top = -387.03705
+offset_right = 2813.0
+offset_bottom = 1166.6667
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="waves" parent="Ocean" unique_id=597935087 instance=ExtResource("4_qfnet")]
 position = Vector2(159, -454.62964)
 scale = Vector2(1, 0.9259259)
@@ -275,20 +287,8 @@ texture = ExtResource("4_71j4m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ocean" unique_id=711949873]
 z_index = -2
-position = Vector2(-485, 1282.41)
+position = Vector2(-500, 1282.4073)
 shape = SubResource("RectangleShape2D_4wyf3")
-
-[node name="godrays" parent="Ocean" unique_id=341587550 instance=ExtResource("9_7r4gi")]
-z_index = 10
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -1305.0
-offset_top = -1227.7777
-offset_right = 2103.0
-offset_bottom = 583.2223
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="BoundsComponent" type="Node" parent="Ocean" unique_id=972341816]
 unique_name_in_owner = true
@@ -301,11 +301,13 @@ scale = Vector2(2.96079, 1.36704)
 energy = 1.19
 texture = ExtResource("6_qfnet")
 texture_scale = 23.51
+metadata/_edit_lock_ = true
 
 [node name="darkness_light" type="DirectionalLight2D" parent="." unique_id=361819301]
 position = Vector2(565, -236)
 color = Color(0, 0, 0, 1)
 blend_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="item" parent="." unique_id=89234546 instance=ExtResource("9_w7kh3")]
 position = Vector2(461, 2363)
