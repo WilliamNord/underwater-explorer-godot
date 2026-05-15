@@ -148,7 +148,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4r5pv")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
 "speed": 8.0
 }, {
@@ -323,7 +323,8 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_60mlk")
 animation = &"walk"
-frame_progress = 0.6404324
+frame = 11
+frame_progress = 1.0
 
 [node name="arm" type="Sprite2D" parent="player" unique_id=503684536]
 z_index = 1

@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bkoub7cu4ecfp" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_3/3.png" id="12_q5onr"]
 [ext_resource type="Texture2D" uid="uid://4mjp7sv7k362" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_3/4.png" id="13_jhx03"]
 [ext_resource type="Script" uid="uid://cqdvwnue3lcuj" path="res://scripts/BoundsComponent.gd" id="14_o8fc1"]
+[ext_resource type="PackedScene" uid="uid://bn18xljur7vtm" path="res://scenes/bubble.tscn" id="15_xo05s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_71j4m"]
 
@@ -318,11 +319,19 @@ environment = SubResource("Environment_7r4gi")
 [node name="boat" parent="." unique_id=225920541 instance=ExtResource("10_w7kh3")]
 position = Vector2(5, 475)
 
-[node name="boat_hider" type="Sprite2D" parent="boat" unique_id=1860899986]
-position = Vector2(18, 195.50003)
+[node name="boat_hider" type="Polygon2D" parent="boat" unique_id=1024170945]
+visible = false
+position = Vector2(16, 189.00003)
 scale = Vector2(0.49484372, 0.03437503)
 texture = ExtResource("4_71j4m")
-metadata/_edit_lock_ = true
+polygon = PackedVector2Array(-799, -799, -799, 799, 799, 799, 799.00006, 510.5378, 799, -799)
+uv = PackedVector2Array(1, 1, 1, 1599, 1599, 1599, 1599, 1)
+polygons = [PackedInt32Array(0, 1, 2, 3)]
+
+[node name="Polygon2D" type="Polygon2D" parent="boat" unique_id=1917967190]
+position = Vector2(1, 1)
+texture = ExtResource("4_71j4m")
+polygon = PackedVector2Array(392, 216, 411, 205, 411, 168, -252, 168, -243, 178, -225, 187, -198, 196, -153, 204, -109, 214)
 
 [node name="horizon" type="Parallax2D" parent="." unique_id=6521635]
 z_index = -100
@@ -331,6 +340,7 @@ scroll_offset = Vector2(-11, 315)
 repeat_size = Vector2(1706.458, 0)
 autoscroll = Vector2(2, 0)
 repeat_times = 5
+metadata/_edit_lock_ = true
 
 [node name="horizon" type="Sprite2D" parent="horizon" unique_id=1364406815]
 position = Vector2(371.99997, -122)
@@ -350,6 +360,7 @@ scroll_offset = Vector2(-11, 315)
 repeat_size = Vector2(1706.458, 0)
 autoscroll = Vector2(10, 0)
 repeat_times = 5
+metadata/_edit_lock_ = true
 
 [node name="big clouds" type="Sprite2D" parent="big coulds" unique_id=1070871701]
 position = Vector2(309.00003, -115)
@@ -363,11 +374,23 @@ scroll_offset = Vector2(-11, 315)
 repeat_size = Vector2(952.47, 0)
 autoscroll = Vector2(-10, 0)
 repeat_times = 5
+metadata/_edit_lock_ = true
 
 [node name="small clouds" type="Sprite2D" parent="small clouds" unique_id=1979943560]
 position = Vector2(166, -305)
 scale = Vector2(1.6537427, 1.6537423)
 texture = ExtResource("13_jhx03")
+
+[node name="bubble3" parent="." unique_id=829130121 instance=ExtResource("15_xo05s")]
+position = Vector2(295, 804)
+collision_layer = 1
+
+[node name="bubble2" parent="." unique_id=155300694 instance=ExtResource("15_xo05s")]
+position = Vector2(296, 743)
+
+[node name="bubble" parent="." unique_id=101229571 instance=ExtResource("15_xo05s")]
+position = Vector2(533, 793)
+gravity_scale = -0.5
 
 [connection signal="body_entered" from="Ocean" to="Ocean" method="_on_body_entered"]
 [connection signal="body_exited" from="Ocean" to="Ocean" method="_on_body_exited"]

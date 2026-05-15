@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bn18xljur7vtm"]
+
+[ext_resource type="Texture2D" uid="uid://c5kgqtuciljnt" path="res://assets/bubble_sprite_64.png" id="1_2vdav"]
+[ext_resource type="Script" uid="uid://dfudwgjgys00h" path="res://scenes/bubble.gd" id="1_b4vvx"]
+[ext_resource type="Texture2D" uid="uid://4vpeo78hi3pw" path="res://assets/bubble_pop_animation-Sheet.png" id="2_pm753"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pm753"]
+radius = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4vvx"]
+atlas = ExtResource("2_pm753")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc0bl"]
+atlas = ExtResource("2_pm753")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6s18"]
+atlas = ExtResource("2_pm753")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax11v"]
+atlas = ExtResource("2_pm753")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ycye"]
+atlas = ExtResource("2_pm753")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jlkr"]
+atlas = ExtResource("2_pm753")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcqnj"]
+atlas = ExtResource("2_pm753")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpimy"]
+atlas = ExtResource("2_pm753")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2vdav"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2vdav")
+}],
+"loop": true,
+"name": &"bubble",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4vvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc0bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6s18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax11v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ycye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jlkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcqnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpimy")
+}],
+"loop": false,
+"name": &"bubble pop",
+"speed": 30.0
+}]
+
+[node name="bubble" type="RigidBody2D" unique_id=829130121]
+disable_mode = 2
+collision_layer = 2
+gravity_scale = -0.5
+script = ExtResource("1_b4vvx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=231795080]
+shape = SubResource("CircleShape2D_pm753")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=795832994]
+sprite_frames = SubResource("SpriteFrames_2vdav")
+animation = &"bubble"

@@ -3,17 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dcawhqujon2kr" path="res://assets/boat_normal.png" id="1_qyrje"]
 [ext_resource type="PackedScene" uid="uid://b7nfqavbashqo" path="res://scenes/boombox.tscn" id="2_qyrje"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0063d"]
-size = Vector2(692, 168)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jsln"]
 size = Vector2(209.59283, 23.075241)
 
-[node name="boat" type="StaticBody2D" unique_id=225920541]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qyrje"]
+polygon = PackedVector2Array(-82.904655, -15.572094, -84.404655, -15.172092, -94.32559, -8.260466, -109.28373, -8.372094, -105.71164, -3.2372098, -102.36279, 1.4511623, -97.67442, 5.358139, -91.404655, 9.227905, -84.948845, 12.167442, -74.34419, 14.511629, -18.418606, 14.623257, -17.1907, 13.953489, -16.409306, 12.725582, -16.409306, -4.353489, -53.404655, -4.372093, -62.004654, -4.372093, -63.404655, -5.772093, -63.404655, -7.072094, -64.60466, -7.572094, -65.80466, -6.372093, -69.404655, -6.372093, -75.20465, -8.372093, -78.80466, -8.372093)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=267381444]
-position = Vector2(65, 130)
-shape = SubResource("RectangleShape2D_0063d")
+[node name="boat" type="StaticBody2D" unique_id=225920541]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=916895674]
 texture_filter = 1
@@ -21,6 +17,7 @@ position = Vector2(568, 75)
 scale = Vector2(8.958333, 8.958333)
 texture = ExtResource("1_qyrje")
 offset = Vector2(-63.404655, -8.372093)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=265472713]
 position = Vector2(-198.8753, -45.104046)
@@ -37,3 +34,12 @@ shape = SubResource("RectangleShape2D_1jsln")
 [node name="boombox" parent="." unique_id=911933470 instance=ExtResource("2_qyrje")]
 z_index = -1
 position = Vector2(54, 37)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=793381493]
+position = Vector2(559, 84)
+scale = Vector2(8.958333, 8.958333)
+occluder = SubResource("OccluderPolygon2D_qyrje")
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1920126649]
+polygon = PackedVector2Array(392, 217, 405, 209, 412, 200, 412, 45, -169, 46, -288, 13, -419, 11, -365, 87, -309, 136, -255, 168, -198, 195, -104, 214)
