@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://m13cc7r8ks86"]
+
+[ext_resource type="Script" uid="uid://c3vvcistk4hcl" path="res://scripts/components/bubble_emitter_component.gd" id="1_7wnv3"]
+
+[node name="bubble_emitter_component" type="Node" unique_id=1346505217 groups=["bubble_emitter"]]
+script = ExtResource("1_7wnv3")

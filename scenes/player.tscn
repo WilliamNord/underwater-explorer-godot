@@ -5,10 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://d2lvufqnpg7u4" path="res://scenes/bubbles.tscn" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://20wfh8i1od2v" path="res://assets/light_textures/light.png" id="5_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://ddo3opktak1nh" path="res://assets/light_textures/FREE Textures Of Light/512x512/512x512 textures (71).png" id="6_fjrip"]
-[ext_resource type="Script" uid="uid://bybackjv36kd3" path="res://scripts/UnderwaterAudioComponent.gd" id="7_smehm"]
+[ext_resource type="Script" uid="uid://bybackjv36kd3" path="res://scripts/components/UnderwaterAudioComponent.gd" id="7_smehm"]
 [ext_resource type="Texture2D" uid="uid://8dg2l0pxa5xh" path="res://assets/character/character_swim-Sheet.png" id="8_smehm"]
 [ext_resource type="Texture2D" uid="uid://i51ng54tcqjq" path="res://assets/character/arm.png" id="8_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://bhy5soivfjhg1" path="res://assets/character/walking-10x.png" id="9_ur7pv"]
+[ext_resource type="Script" uid="uid://c3vvcistk4hcl" path="res://scripts/components/bubble_emitter_component.gd" id="10_y4r1p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ur7pv"]
 radius = 24.0
@@ -298,6 +299,7 @@ volume_db = 9.455
 pitch_scale = 1.3
 
 [node name="bubbles" parent="." unique_id=2065003812 instance=ExtResource("4_dqkch")]
+visible = false
 
 [node name="shadow_light" type="PointLight2D" parent="." unique_id=1865949121]
 show_behind_parent = true
@@ -336,3 +338,7 @@ offset = Vector2(-0.32904816, 5.922879)
 
 [node name="AnimationPlayerArm" type="AnimationPlayer" parent="player/arm" unique_id=595608859]
 libraries/ = SubResource("AnimationLibrary_d2wvv")
+
+[node name="bubble_emitter_component" type="Node" parent="." unique_id=481751785]
+script = ExtResource("10_y4r1p")
+metadata/_custom_type_script = "uid://c3vvcistk4hcl"

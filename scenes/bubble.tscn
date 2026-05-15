@@ -79,7 +79,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="bubble" type="RigidBody2D" unique_id=829130121]
+[node name="bubble" type="RigidBody2D" unique_id=829130121 groups=["bubble"]]
 disable_mode = 2
 collision_layer = 2
 gravity_scale = -0.5

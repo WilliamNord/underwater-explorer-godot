@@ -24,6 +24,8 @@ func _on_area_entered(area: Area2D) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.in_water_gravity()
+	if body.is_in_group("bubble_emitter"):
+		body.spawn_bubble()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):

@@ -13,8 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dkjftlygo8ere" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_1/1.png" id="11_e3hyu"]
 [ext_resource type="Texture2D" uid="uid://bkoub7cu4ecfp" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_3/3.png" id="12_q5onr"]
 [ext_resource type="Texture2D" uid="uid://4mjp7sv7k362" path="res://assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_3/4.png" id="13_jhx03"]
-[ext_resource type="Script" uid="uid://cqdvwnue3lcuj" path="res://scripts/BoundsComponent.gd" id="14_o8fc1"]
-[ext_resource type="PackedScene" uid="uid://bn18xljur7vtm" path="res://scenes/bubble.tscn" id="15_xo05s"]
+[ext_resource type="Script" uid="uid://cqdvwnue3lcuj" path="res://scripts/components/BoundsComponent.gd" id="14_o8fc1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_71j4m"]
 
@@ -380,17 +379,6 @@ metadata/_edit_lock_ = true
 position = Vector2(166, -305)
 scale = Vector2(1.6537427, 1.6537423)
 texture = ExtResource("13_jhx03")
-
-[node name="bubble3" parent="." unique_id=829130121 instance=ExtResource("15_xo05s")]
-position = Vector2(295, 804)
-collision_layer = 1
-
-[node name="bubble2" parent="." unique_id=155300694 instance=ExtResource("15_xo05s")]
-position = Vector2(296, 743)
-
-[node name="bubble" parent="." unique_id=101229571 instance=ExtResource("15_xo05s")]
-position = Vector2(533, 793)
-gravity_scale = -0.5
 
 [connection signal="body_entered" from="Ocean" to="Ocean" method="_on_body_entered"]
 [connection signal="body_exited" from="Ocean" to="Ocean" method="_on_body_exited"]
